@@ -11,7 +11,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 3px;
     gap: 20px;
 }
 
@@ -30,6 +30,8 @@ h1 {
     font-size: 60px;
     font-family: "Verdana", "Geneva", sans-serif;
 }
+
+
 
 /*Estilo general para el contenedor de los menus de navegacion*/
 .contenedor_menu {
@@ -69,17 +71,19 @@ nav {
     font-family: "Verdana", "Geneva", sans-serif;
     background-color: #facea5;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-self: center;
     height: 600px;
-    margin: 0;
+    margin: 1px;
 }
 
  /*Estilo para el título del mensaje*/
-.mensaje-titulo {
-    font-size: 40px;
-    color: rgb(15, 15, 15);
-    margin-bottom: 15px;
+.mensaje-titulo{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    margin-top: -50px;
+    margin-bottom: 30px;
 }
 
 
@@ -96,7 +100,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; 
+    text-align: center;
     height: 250px;
 }
 
@@ -104,7 +108,7 @@ nav {
 input {
   padding: 10px 30px;
   font-size: 18px;
-  background-color: #f7f7f7; 
+  background-color: #f7f7f7;
   color: rgb(17, 17, 17);
   border-radius: 5px;
 }
@@ -121,15 +125,13 @@ input[type="submit"] {
 
 
 
-
-
 /*Estilo para el footer*/
 
 /*Estilos para el contenedor del footer*/
 .contenedor_footer{
-    background-color: #e9c193;
+    background-color: #cca37d;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 30px;
     max-width: 6000px;
@@ -138,8 +140,8 @@ input[type="submit"] {
 
 /*Estilo para la imagen del footer creative commons*/
 .creative_commons {
-    width: 10.5rem;
-    height: 3.5rem;
+    width: 12rem;
+    height: 4rem;
     max-width: 80%;
     order: 1;
 }
