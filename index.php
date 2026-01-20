@@ -1,0 +1,122 @@
+<?php
+session_start();
+// Cuando inicie sesion se mostrara aqui
+if (isset($_SESSION['mensaje'])) {
+    // Para poder usarlo en Javascript
+    $mensaje = $_SESSION['mensaje'];    
+    // Para que se elimine el mensaje cuando se cierre sesion
+    unset($_SESSION['mensaje']);
+} else {
+    $mensaje = '';
+}
+?>
+
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Cine Elorrieta-Errekamari </title>
+
+<!----Se mostrara el mensaje "Hola, x-->
+            <?php 
+        if(isset($_SESSION['cliente'])) { 
+            echo " - Hola " . $_SESSION['cliente']; 
+        } 
+    ?>
+
+    </head>
+    <body>
+        <header>
+             <div class="contenedor_">
+                <a href="Cine_Elorrieta-Errekamari.html"><img src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
+                <h1>Cine Elorrieta-Errekamari</h1>
+                <a href="login.html"><img src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
+            </div>
+            <nav>
+                <a href="peliculas.html">Peliculas</a>
+                <a href="carrito.html">Carrito</a>
+            </nav>
+        </header>
+            <main>
+                <h1>Cine</h1>
+<!--1º Pelicula-->
+                    <img src="movies/rey_leon.jpg" alt="Imagen de la pelicula El Rey Leon"/>
+                    <a href="https://www.youtube.com/watch?v=h-As2lUk6IA"><p>Reproducir Trailer</p></a>
+                    <h2><b>El Rey Leon</b></h2>
+                    <p>Simba es un pequeño y travieso león, hijo del rey de la selva, 
+                       Mufasa. Cierto día, junto con su amiga Nala se adentran en el 
+                       territorio de las hienas y tienen que ser salvados por su padre.
+                       Esto le da una idea a Scar, el tío de Simba, que quiere ser el rey, 
+                       pero sabe que Simba es quien está llamado a ser el siguiente rey de 
+                       la selva. Scar traza junto a las hienas un plan para matar a padre e
+                       hijo y que parezca un accidente, para así instaurar un reinado de 
+                       terror en la manada. Sin embargo su plan no le sale como había 
+                       previsto y Simba sale con vida. Scar no le mata pero le obliga a 
+                       huir. Desterrado, solo y abatido, Simba se encuentra con Timón y 
+                       Pumba, un jabalí y un suricato que le harán ver las cosas de otra 
+                       manera.</p>
+                    <p><i><b>Genero: </b>Animacion</i></p>
+                    <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
+
+                    <p><b> 17 de Febrero </b></p>
+                    <p> <sup> sala 5 </br> </sup></sup>12:00 </br> <sub> precio: 5€ </sub> <sup> </sup> </p>
+                    <p> <sup> sala 7 </br> </sup></sup>18:00 </br> <sub> precio: 8€ </sub> <sup> </sup> </p>
+                    <p> <sup> sala 1 </br> </sup></sup>21:00 </br> <sub> precio: 12€ </sub> <sup> </sup> </p>
+<!--2º Pelicula-->
+                    <img src="movies/no_respires.jpg" alt="Imagen de la pelicula No Respires" />
+                    <a href="https://www.youtube.com/watch?v=mvEetUDCKxE"><p>Reproducir Trailer</p></a>
+                    <h2><b>No Respires</b></h2>
+                    <p>Tres jóvenes planifican a la perfección cada robo que realizan en los 
+                       chalet que asaltan. Ahora han encontrado el objetivo perfecto: la 
+                       vivienda de un multimillonario ciego que podría sacarles de la 
+                       delincuencia para siempre. Cuando entran, atacan al inquilino. Pero, 
+                       tan pronto como intentan huir de la casa, los roles se cambian y los 
+                       adolescentes se encuentran luchando por su supervivencia contra un 
+                       peligroso psicópata.</p>
+                    <p><i><b>Genero: </b>Horror</i></p>
+                    <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
+<!--3º Pelicula-->
+                    <img src="movies/senderos_de_gloria.png" alt="Imagen de la pelicula Senderos de Gloria" />
+                    <a href="https://www.youtube.com/watch?v=jtDcvriBc8s"><p>Reproducir Trailer</p></a>
+                    <h2><b>Senderos de Gloria</b></h2>
+                    <p>Se presenta el conflicto bélico de 1916 de trincheras entre franceses 
+                       y alemanes, donde se nos muestra la decadente presencia de las 
+                       unidades, temerosas y desorganizadas en un enfrentamiento que ni 
+                       avanzaba ni retrocedía. El General George Broulard (Adolphe Menjou), 
+                       tentado por una oferta del General Miró, ambos firmes exaltadores de 
+                       la patria francesa, ordenan al Coronel Dax (Kirk Douglas) a llevar a 
+                       cabo una ofensiva para tomar la “Colina de las Hormigas”, punto 
+                       estratégico de la artillería alemana. Aunque Dax considera el ataque 
+                       un suicidio, obedece las órdenes. La Brigada 119 se desordena ante el 
+                       ataque inminente alemán, provocando la retirada y la insubordinación. 
+                       Ante el hecho de cobardía, el General Broulard convoca un consejo de 
+                       guerra para condenar a unos soldados de dicha Brigada, escogidos al 
+                       azar, como represalia a la unidad por su traición.</p>
+                    <p><i><b>Genero: </b>Belico</i></p>
+                    <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
+<!--4º Pelicula-->
+                    <img src="movies/cop_car.webp" alt="Imagen de la pelicula Cop Car"/>
+                    <a href="https://www.youtube.com/watch?v=7QO9vXoFkb0"><p>Reproducir Trailer</p></a>
+                    <h2><b>Cop Car</b></h2>
+                    <p>Dos niños de ocho años de Colorado encuentran un coche policial 
+                       aparentemente abandonado y con las llaves en el contacto, así que 
+                       deciden aprender a conducirlo. Las pistolas y el cordón policial son 
+                       juguetes para Travis y Harrison hasta que un policía corrupto reclama 
+                       el vehículo, en el que había transportado un cadáver. Así comienza la 
+                       macabra persecución en la que los dos jóvenes tratarán de huir.</p>
+                    <p><i><b>Genero: </b>Thriller</i></p>
+                    <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
+<!--5º Pelicula-->
+                    <img src="movies/aterriza_como_puedas.png" alt="Imagen de la pelicula Aterriza Como Puedas"/>
+                    <a href="https://www.youtube.com/watch?v=mvdGhsd8vKI"><p>Reproducir Trailer</p></a>
+                    <h2><b>Aterriza Como Puedas</b></h2>
+                    <p>A causa de una comida en mal estado, los pilotos de un avión comercial 
+                       quedan fuera de combate. Con la nave a la deriva, solo Ted Striker, un 
+                       antiguo as de la aviación que dejó de volar a causa de una depresión, 
+                       tiene alguna posibilidad de poder hacerla aterrizar.</p>
+                    <p><i><b>Genero: </b>Comedia</i></p>
+                    <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
+            </main>
+    </body>
+</html>
