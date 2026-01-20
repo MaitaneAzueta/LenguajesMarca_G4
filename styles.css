@@ -1,0 +1,276 @@
+/*Estilo general para toda la página*/
+body{
+    background-color: #cca37d;
+}
+
+/*Estilo para el header*/
+/*Contenedor del logo y usuario*/
+.contenedor_logo{
+    background-color: #cca37d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+/*Estilo general para el logo*/
+.Logotipo {
+    width: 400px;
+}
+
+/*Estilo general para el usuario*/
+.usuario {
+    width: 170px;
+}
+
+/*Estilo general para los h1.*/
+h1 {
+    font-size: 60px;
+    font-family: "Verdana", "Geneva", sans-serif;
+}
+
+/*Estilo general para el contenedor de los menus de navegacion*/
+.contenedor_menu {
+    background-color: #e7ba8f;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*Estilo para los elementos dentro del menu de navegacion y el menu de navegacion */
+nav a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #000;
+    padding: 20px;
+    border: 1px solid #cca37d;
+    flex-grow: 1;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color:#DAB086;
+}
+
+
+/*Estilo general para el menu de navegacion*/
+nav {
+    display: flex;
+    width: 100%;
+    border: 1px solid #cca37d;
+}
+
+
+/*Estilos para login.html*/
+.contenedor_mensaje {
+    font-family: "Verdana", "Geneva", sans-serif;
+    background-color: #facea5;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 600px;
+    margin: 0;
+}
+
+ /*Estilo para el título del mensaje*/
+.mensaje-titulo {
+    font-size: 40px;
+    color: rgb(15, 15, 15);
+    margin-bottom: 15px;
+}
+
+
+
+/* Estilo para el contenedor principal del mensaje */
+.mensaje-principal {
+    margin-top: 25px;
+    background-color: #f8e7cd;
+    padding: 150px;
+    border-radius: 12px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    height: 250px;
+}
+
+/* Estilo para los campos que rellenar */
+input {
+  padding: 10px 30px;
+  font-size: 18px;
+  background-color: #f7f7f7; 
+  color: rgb(17, 17, 17);
+  border-radius: 5px;
+}
+
+/* Estilo para el botón de entrada */
+input[type="submit"] {
+    background-color: rgb(240, 236, 236);
+}
+
+/* Botón de entrada*/
+.texto-boton {
+    color: rgb(14, 13, 13);
+}
+
+
+
+
+
+/*Estilo para el footer*/
+
+/*Estilos para el contenedor del footer*/
+.contenedor_footer{
+    background-color: #e9c193;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    max-width: 6000px;
+    padding: 20px;
+}
+
+/*Estilo para la imagen del footer creative commons*/
+.creative_commons {
+    width: 10.5rem;
+    height: 3.5rem;
+    max-width: 80%;
+    order: 1;
+}
+
+/*Estilo para el contenedor del texto del footer*/
+.texto_contenedor_footer {
+    text-align: center;
+    font-size: 25px;
+    order: 2;
+}
+
+/*Estilo para el contenedor de las imagenes de las redes sociales del footer*/
+.imagenes_contenedor_footer {
+    grid-area: imagenes_f;
+    text-align: center;
+    order: 3;
+}
+
+/*Estilo para las imagenes redes sociales*/
+.imagenes_redessociales {
+    width: 4rem;
+    height: 4rem;
+}
+
+/*Estilo para que las imagenes redes sociales cambien de color*/
+.imagenes_redessociales:hover {
+    filter: grayscale(100%);
+}
+
+/*Estilos para Carrito.html*/
+
+/* Contenedor principal del carrito */
+main {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #f8e7cd;
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos de secciones en carrito */
+main h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #5a3e2b;
+}
+
+/* Contenedor de las películas disponibles */
+#peliculas > div {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #facea5; /* tono similar a contenedor_mensaje */
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* Botones en carrito */
+#peliculas button,
+#carrito button,
+#finalizar {
+    padding: 8px 15px;
+    font-size: 18px;
+    background-color: #e7ba8f;
+    color: #000;
+    border: 1px solid #cca37d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#peliculas button:hover,
+#carrito button:hover,
+#finalizar:hover {
+    background-color: #cca37d;
+    color: white;
+}
+
+/* Tabla del carrito */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #cca37d;
+    text-align: center;
+}
+
+th {
+    background-color: #e7ba8f;
+    color: #000;
+}
+
+/* Total del carrito */
+#total {
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #5a3e2b;
+}
+
+/* Botón finalizar compra */
+#finalizar {
+    display: block;
+    margin: 25px auto 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #peliculas > div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    th, td {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    main {
+        padding: 20px;
+        margin: 20px;
+    }
+}
