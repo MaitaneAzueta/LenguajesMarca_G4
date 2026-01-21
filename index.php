@@ -23,10 +23,12 @@ if (isset($_SESSION['mensaje'])) {
     $mensaje = '';
 }
 
-$sql = "SELECT p.NomPelicula, p.Duracion, p.Portada, g.NomGenero
+$sql = "SELECT p.NomPelicula, p.Duracion, p.Portada, g.NomGenero, p.DesPelicula
 FROM pelicula p
 INNER JOIN genero g ON p.IDGenero = g.IDGenero";
 $resultado = $conexion->query($sql);
+
+$sql = "SELECT "
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +51,8 @@ $resultado = $conexion->query($sql);
         <header>
             <div class="contenedor_logo">
                 <img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" />
-                <h1>CINE ELORRIETA</h1> 
+                <h1>CINE ELORRIETA</h1>
+                <a href="logout.php">Cerrar Sesion</a>
                 <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
             </div>
             <nav>
@@ -77,6 +80,7 @@ $resultado = $conexion->query($sql);
                 ?>
                 <img src = "<?php echo $peli['Portada']; ?>" alt = Portada de peliculas />
                     <h2> <?php echo $peli['NomPelicula']; ?> </h2>
+                    <p> <strong> Descripcion: </strong> <?php echo $peli['DesPelicula']; ?> </p>
                     <p> <strong> Género: </strong> <?php echo $peli['NomGenero']; ?> </p>
                     <p> <strong> Duración: </strong> <?php echo $tiempo; ?> </p>
                 
