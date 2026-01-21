@@ -6,7 +6,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "reto2_g4";
+$dbname = "reto2_g4_true";
 
 // Se "hace" la conexion
 $conn = new mysqli($servername, $username, $password, $dbname, 3359);
