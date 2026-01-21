@@ -170,3 +170,45 @@ input[type="submit"] {
 .imagenes_redessociales:hover {
     filter: grayscale(100%);
 }
+
+
+
+
+
+
+
+
+
+
+/*Estilos para index.html*/
+/*Estilo para el contenedor de las peliculas*/
+.contenedor_general_peliculas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+/*Estilo para los subtitulos de las peliculas*/
+.h2_subtitulo_peliculas{
+    width: 100%;
+    text-align: center;
+}
+
+
+.imagenes_texto_pelicula {
+    margin-left: 1%;
+    max-width: 1000px;
+}
+
+
+.texto_descripcion{
+    
+}
+
+
+.salas{
+
+}

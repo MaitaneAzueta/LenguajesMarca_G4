@@ -4,26 +4,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cine Elorrieta-Errekamari </title>
-        
+        <link rel="stylesheet" href="styles.css" />
    </head>
     <body>
         <header>
-             <div class="contenedor_">
-                <a href="index.html"><img src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
+             <div class="contenedor_logo">
+                <a href="index.html"><img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
                 <h1>Cine Elorrieta-Errekamari</h1>
-                <a href="login.html"><img src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
+                <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
             </div>
             <nav>
+               <div class="contenedor_menu">
                 <a href="index.html">Peliculas</a>
                 <a href="carrito.html">Carrito</a>
+               </div>
             </nav>
         </header>
             <main>
+               <div class="contenedor_peliculas">
                 <h1>Cine</h1>
 <!--1º Pelicula-->
-                    <img src="movies/rey_leon.jpg" alt="Imagen de la pelicula El Rey Leon"/>
-                    <h2><b>El Rey Leon</b></h2>
-                    <p>Simba es un pequeño y travieso león, hijo del rey de la selva, 
+                    <img class="imagenes_texto_pelicula" src="movies/rey_leon.jpg" alt="Imagen de la pelicula El Rey Leon"/>
+                    <h2 class="h2_subtitulo_productos"><b>El Rey Leon</b></h2>
+                    <p class="texto_descripcion">Simba es un pequeño y travieso león, hijo del rey de la selva, 
                        Mufasa. Cierto día, junto con su amiga Nala se adentran en el 
                        territorio de las hienas y tienen que ser salvados por su padre.
                        Esto le da una idea a Scar, el tío de Simba, que quiere ser el rey, 
@@ -43,7 +46,8 @@
                     <p> <sup> sala 7 </br> </sup></sup>18:00 </br> <sub> precio: 8€ </sub> <sup> </sup> </p>
                     <p> <sup> sala 1 </br> </sup></sup>21:00 </br> <sub> precio: 12€ </sub> <sup> </sup> </p>
 <!--2º Pelicula-->
-                    <img src="movies/no_respires.jpg" alt="Imagen de la pelicula No Respires" />
+                    <img class="imagenes_texto_pelicula"src="movies/no_respires.jpg" alt="Imagen de la pelicula No Respires" />
+                     <h2><b>No Respires</b></h2>
                     <p>Tres jóvenes planifican a la perfección cada robo que realizan en los 
                        chalet que asaltan. Ahora han encontrado el objetivo perfecto: la 
                        vivienda de un multimillonario ciego que podría sacarles de la 
@@ -54,9 +58,9 @@
                     <p><i><b>Genero: </b>Horror</i></p>
                     <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
 <!--3º Pelicula-->
-                    <img src="movies/senderos_de_gloria.png" alt="Imagen de la pelicula Senderos de Gloria" />
+                    <img class="imagenes_texto_pelicula"src="movies/senderos_de_gloria.png" alt="Imagen de la pelicula Senderos de Gloria" />
                     <h2><b>Senderos de Gloria</b></h2>
-                    <p>Se presenta el conflicto bélico de 1916 de trincheras entre franceses 
+                    <p class="texto_descripcion">Se presenta el conflicto bélico de 1916 de trincheras entre franceses 
                        y alemanes, donde se nos muestra la decadente presencia de las 
                        unidades, temerosas y desorganizadas en un enfrentamiento que ni 
                        avanzaba ni retrocedía. El General George Broulard (Adolphe Menjou), 
@@ -72,7 +76,7 @@
                     <p><i><b>Genero: </b>Belico</i></p>
                     <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
 <!--4º Pelicula-->
-                    <img src="movies/cop_car.webp" alt="Imagen de la pelicula Cop Car"/>
+                    <img class="imagenes_texto_pelicula"src="movies/cop_car.webp" alt="Imagen de la pelicula Cop Car"/>
                     <h2><b>Cop Car</b></h2>
                     <p>Dos niños de ocho años de Colorado encuentran un coche policial 
                        aparentemente abandonado y con las llaves en el contacto, así que 
@@ -83,7 +87,7 @@
                     <p><i><b>Genero: </b>Thriller</i></p>
                     <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
 <!--5º Pelicula-->
-                    <img src="movies/aterriza_como_puedas.png" alt="Imagen de la pelicula Aterriza Como Puedas"/>
+                    <img class="imagenes_texto_pelicula"src="movies/aterriza_como_puedas.png" alt="Imagen de la pelicula Aterriza Como Puedas"/>
                     <h2><b>Aterriza Como Puedas</b></h2>
                     <p>A causa de una comida en mal estado, los pilotos de un avión comercial 
                        quedan fuera de combate. Con la nave a la deriva, solo Ted Striker, un 
@@ -91,6 +95,20 @@
                        tiene alguna posibilidad de poder hacerla aterrizar.</p>
                     <p><i><b>Genero: </b>Comedia</i></p>
                    <p><i><b>Duracion: </b>1 hora 28 minutos</i></p>
+               </div>
             </main>
+         <footer>
+            <div class="contenedor_footer">
+                <img class="creative_commons" src="footer/cc.png" alt="Imagen de Creative Commons"/>
+                <div class="texto_contenedor_footer">
+                    <p>© 2026 Elorrieta Cines — Todos los derechos reservados</p>
+                </div>
+                <div class="imagenes_contenedor_footer">
+                    <a href="https://www.facebook.com/"><img class="imagenes_redessociales"src="footer/facebook.png" alt="Imagen del icono de facebook"/></a>
+                    <a href="https://www.instagram.com/"><img class="imagenes_redessociales" src="footer/instagram.png" alt="Imagen del icono de instagram"/></a>
+                    <a href="https://www.x.com/"><img class="imagenes_redessociales" src="footer/twitter.png" alt="Imagen del icono de twitter"/></a>
+                </div>
+            </div>
+         </footer>
     </body>
 </html>
