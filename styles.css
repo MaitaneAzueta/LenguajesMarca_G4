@@ -11,7 +11,11 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+<<<<<<< HEAD
     padding: 20px;
+=======
+    padding: 3px;
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
     gap: 20px;
 }
 
@@ -31,6 +35,11 @@ h1 {
     font-family: "Verdana", "Geneva", sans-serif;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
 /*Estilo general para el contenedor de los menus de navegacion*/
 .contenedor_menu {
     background-color: #e7ba8f;
@@ -69,6 +78,7 @@ nav {
     font-family: "Verdana", "Geneva", sans-serif;
     background-color: #facea5;
     display: flex;
+<<<<<<< HEAD
     justify-content: center;
     align-self: center;
     height: 600px;
@@ -80,6 +90,21 @@ nav {
     font-size: 40px;
     color: rgb(15, 15, 15);
     margin-bottom: 15px;
+=======
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    height: 600px;
+    margin: 1px;
+}
+
+ /*Estilo para el título del mensaje*/
+.mensaje-titulo{
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    margin-top: -50px;
+    margin-bottom: 30px;
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
 }
 
 
@@ -96,7 +121,11 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     text-align: center; 
+=======
+    text-align: center;
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
     height: 250px;
 }
 
@@ -104,7 +133,11 @@ nav {
 input {
   padding: 10px 30px;
   font-size: 18px;
+<<<<<<< HEAD
   background-color: #f7f7f7; 
+=======
+  background-color: #f7f7f7;
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
   color: rgb(17, 17, 17);
   border-radius: 5px;
 }
@@ -121,15 +154,24 @@ input[type="submit"] {
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
 /*Estilo para el footer*/
 
 /*Estilos para el contenedor del footer*/
 .contenedor_footer{
+<<<<<<< HEAD
     background-color: #e9c193;
     display: flex;
     justify-content: space-between;
+=======
+    background-color: #cca37d;
+    display: flex;
+    justify-content: space-around;
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
     align-items: center;
     gap: 30px;
     max-width: 6000px;
@@ -138,8 +180,13 @@ input[type="submit"] {
 
 /*Estilo para la imagen del footer creative commons*/
 .creative_commons {
+<<<<<<< HEAD
     width: 10.5rem;
     height: 3.5rem;
+=======
+    width: 12rem;
+    height: 4rem;
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
     max-width: 80%;
     order: 1;
 }
@@ -167,6 +214,7 @@ input[type="submit"] {
 /*Estilo para que las imagenes redes sociales cambien de color*/
 .imagenes_redessociales:hover {
     filter: grayscale(100%);
+<<<<<<< HEAD
 }
 
 /*Estilos para Carrito.html*/
@@ -274,3 +322,6 @@ th {
         margin: 20px;
     }
 }
+=======
+}
+>>>>>>> f68c38b57021a9482c5e01a3682030161c4be14d
