@@ -11,13 +11,13 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 3px;
+    padding: 6px;
     gap: 20px;
 }
 
 /*Estilo general para el logo*/
 .Logotipo {
-    width: 400px;
+    width: 300px;
 }
 
 /*Estilo general para el usuario*/
@@ -27,7 +27,7 @@ body{
 
 /*Estilo general para los h1.*/
 h1 {
-    font-size: 60px;
+    font-size: 50px;
     font-family: "Verdana", "Geneva", sans-serif;
 }
 
@@ -74,7 +74,7 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-self: center;
-    height: 600px;
+    height: 550px;
     margin: 1px;
 }
 
@@ -101,7 +101,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 250px;
+    height: 200px;
 }
 
 /* Estilo para los campos que rellenar */
