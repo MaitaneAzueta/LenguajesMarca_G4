@@ -25,10 +25,10 @@ if (isset($_SESSION['mensaje'])) {
 
 $sql = "SELECT p.NomPelicula, p.Duracion, p.Portada, g.NomGenero, p.DesPelicula
 FROM pelicula p
-INNER JOIN genero g ON p.IDGenero = g.IDGenero";
+INNER JOIN genero g ON p.IDGenero = g.IDGenero
+INNER JOIN sesion ses ON p.IDPelicula = ses.IDPelicula
+INNER JOIN sala s ON ses.IDSala = s.IDSala";
 $resultado = $conexion->query($sql);
-
-$sql = "SELECT "
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ $sql = "SELECT "
             </nav>
         </header>
             <main>
-                <h1>Cine</h1>
+                <h2>Cine</h2>
                 <?php
                     if ($resultado && $resultado->num_rows > 0){
                         while($peli = $resultado->fetch_assoc()){
@@ -79,10 +79,16 @@ $sql = "SELECT "
                             }
                 ?>
                 <img src = "<?php echo $peli['Portada']; ?>" alt = Portada de peliculas />
-                    <h2> <?php echo $peli['NomPelicula']; ?> </h2>
+                    <h3> <?php echo $peli['NomPelicula']; ?> </h3>
                     <p> <strong> Descripcion: </strong> <?php echo $peli['DesPelicula']; ?> </p>
                     <p> <strong> Género: </strong> <?php echo $peli['NomGenero']; ?> </p>
                     <p> <strong> Duración: </strong> <?php echo $tiempo; ?> </p>
+                <hr>
+                    <h4> <strong> <?php echo $peli['NomSala'] ?> <strong> </h4>
+                    <p> <?php echo $peli['FecHoraIni'] ?> </p>
+                    <p> <?php echo $peli['FecHoraFin'] ?> </p>
+                    <p> <?php echo $peli['Precio'] ?> </p>
+                    <p> <?php echo $peli['Aforo'] ?> </p>
                 
                 <?php
                     }
