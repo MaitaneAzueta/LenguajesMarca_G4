@@ -1,5 +1,18 @@
 <?php
 session_start();
+
+// Parametros para la conexion a la base de datos
+$servername = "localhost:3359";
+$username = "root";
+$password = "";
+$dbname = "reto2_g4";
+
+$conexion = new mysqli($servername, $username, $password, $dbname);
+
+if ($conexion->connect_error) {
+    die("Fallo en la conexión: " . $conn->connect_error);
+}
+
 // Cuando inicie sesion se mostrara aqui
 if (isset($_SESSION['mensaje'])) {
     // Para poder usarlo en Javascript
@@ -10,7 +23,7 @@ if (isset($_SESSION['mensaje'])) {
     $mensaje = '';
 }
 
-$sql = "SELECT p.NomPelicula, p.Duracion, p.Portada, gNomGenero
+$sql = "SELECT p.NomPelicula, p.Duracion, p.Portada, g.NomGenero
 FROM pelicula p
 INNER JOIN genero g ON p.IDGenero = g.IDGenero";
 $resultado = $conexion->query($sql);
@@ -21,7 +34,8 @@ $resultado = $conexion->query($sql);
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cine Elorrieta-Errekamari </title>
+            <link rel="stylesheet" href="styles.css" />
+            <title>Cine Elorrieta-Errekamari</title>
 
 <!----Se mostrara el mensaje "Hola, x-->
             <?php 
@@ -33,14 +47,16 @@ $resultado = $conexion->query($sql);
     </head>
     <body>
         <header>
-             <div class="contenedor_">
-                <a href="Cine_Elorrieta-Errekamari.html"><img src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
-                <h1>Cine Elorrieta-Errekamari</h1>
-                <a href="login.html"><img src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
+            <div class="contenedor_logo">
+                <img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" />
+                <h1>CINE ELORRIETA</h1> 
+                <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
             </div>
             <nav>
-                <a href="peliculas.html">Peliculas</a>
-                <a href="carrito.html">Carrito</a>
+            <div class="contenedor_menu">
+                <a href="index.php"> Películas</a>
+                <a href="carrito.html"> Carrito</a>
+            </div>
             </nav>
         </header>
             <main>
@@ -49,7 +65,7 @@ $resultado = $conexion->query($sql);
                     if ($resultado && $resultado->num_rows > 0){
                         while($peli = $resultado->fetch_assoc()){
 
-                            $horas = floor($peli['Duracion']) / 60);
+                            $horas = floor($peli['Duracion'] / 60);
                             $minutos = $peli['Duracion'] % 60;
                             if ($horas > 0 && $minutos > 0) {
                                 $tiempo = $horas . " hora/s y " . $minutos . " minutos";
@@ -71,8 +87,21 @@ $resultado = $conexion->query($sql);
                         echo "<p> No hay peliculas disponibles </p>";
                     }
 
-                    conexion->close();
+                    $conexion->close();
                     ?>    
             </main>
-    </body>
-</html>
+        </body>
+        <footer>
+            <div class="contenedor_footer">
+                <img class="creative_commons" src="footer/cc.png" alt="Imagen de Creative Commons"/>
+                <div class="texto_contenedor_footer">
+                    <p>© 2026 Elorrieta Cines — Todos los derechos reservados</p>
+                </div>
+                <div class="imagenes_contenedor_footer">
+                    <a href="https://www.facebook.com/"><img class="imagenes_redessociales"src="footer/facebook.png" alt="Imagen del icono de facebook"/></a>
+                    <a href="https://www.instagram.com/"><img class="imagenes_redessociales" src="footer/instagram.png" alt="Imagen del icono de instagram"/></a>
+                    <a href="https://www.x.com/"><img class="imagenes_redessociales" src="footer/twitter.png" alt="Imagen del icono de twitter"/></a>
+                </div>
+            </div>
+        </footer>
+    </html>
