@@ -209,6 +209,11 @@ input[type="submit"] {
 }
 
 
-.salas{
+.duracion{
+    
+}
 
+.salas_sesiones{
+    margin-left: 1%;
+    max-width: 1000px;
 }
