@@ -15,9 +15,9 @@ if ($conexion->connect_error) {
 
 // Cuando inicie sesion se mostrara aqui
 if (isset($_SESSION['mensaje'])) {
-    // Para poder usarlo en Javascript
+// Para poder usarlo en Javascript
     $mensaje = $_SESSION['mensaje'];    
-    // Para que se elimine el mensaje cuando se cierre sesion
+// Para que se elimine el mensaje cuando se cierre sesion
     unset($_SESSION['mensaje']);
 } else {
     $mensaje = '';
@@ -38,14 +38,6 @@ $resultado = $conexion->query($sql);
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="styles.css" />
             <title>Cine Elorrieta-Errekamari</title>
-
-<!----Se mostrara el mensaje "Hola, x-->
-            <?php 
-        if(isset($_SESSION['cliente'])) { 
-            echo " - Hola " . $_SESSION['cliente']; 
-        } 
-    ?>
-
     </head>
     <body>
         <header>
@@ -53,6 +45,12 @@ $resultado = $conexion->query($sql);
                 <img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" />
                 <h1>CINE ELORRIETA</h1>
                 <a href="logout.php">Cerrar Sesion</a>
+<!----Se mostrara el mensaje "Hola, x-->
+            <?php 
+        if(isset($_SESSION['cliente'])) { 
+            echo " Hola " . $_SESSION['cliente']; 
+        } 
+    ?>
                 <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
             </div>
             <nav>
