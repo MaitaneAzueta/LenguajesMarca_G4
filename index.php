@@ -48,12 +48,14 @@ $resultado = $conexion->query($sql);
                 <img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" />
                 <h1>CINE ELORRIETA</h1>
                 <a href="logout.php">Cerrar Sesion</a>
+
 <!----Se mostrara el mensaje "Hola, x-->
             <?php 
         if(isset($_SESSION['cliente'])) { 
             echo "Hola " . $_SESSION['cliente']; 
         } 
     ?>
+
                 <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
             </div>
             <nav>
@@ -65,13 +67,14 @@ $resultado = $conexion->query($sql);
         </header>
         <main>
             <h2>Cine</h2>
+
             <?php
                 $idPeliculaAnterior = null;
                 if ($resultado && $resultado->num_rows > 0) {
                     while($peli = $resultado->fetch_assoc()) {
                         if ($peli['IDPelicula'] !== $idPeliculaAnterior) {
                             if ($idPeliculaAnterior !== null) {
-                                echo "</div></section><hr>";
+                                echo "</div></section>";
                             }
 
                         $horas = floor($peli['Duracion'] / 60);
@@ -84,6 +87,7 @@ $resultado = $conexion->query($sql);
                         } else {
                             $tiempo = $minutos . " minutos";
                         }
+
             ?>
             <section class="pelicula">
                 <img src="<?php echo $peli['Portada']; ?>" alt="Portada de peliculas" />
@@ -93,8 +97,8 @@ $resultado = $conexion->query($sql);
                 <p><strong>Duración:</strong> <?php echo $tiempo; ?></p>
                 <div class="contenedor-sesiones"> <?php
             } 
-
             ?>
+            <hr>
             <div class="sesion">
                 <h4><strong><?php echo $peli['NomSala'] ?></strong></h4>
                 <p>Fecha de Inicio: <?php echo $peli['FecHoraIni'] ?></p>
@@ -102,6 +106,7 @@ $resultado = $conexion->query($sql);
                 <p>Precio: <?php echo $peli['Precio'] ?>€</p>
                 <p><?php echo $peli['Aforo'] ?> Entradas Disponibles</p>
             </div>
+
             <?php
                 $idPeliculaAnterior = $peli['IDPelicula'];
                 }
@@ -110,7 +115,8 @@ $resultado = $conexion->query($sql);
                     echo "<p> No hay peliculas disponibles </p>";
                 }
             $conexion->close();
-            ?>    
+            ?>
+
         </main>
         </body>
         <footer>
