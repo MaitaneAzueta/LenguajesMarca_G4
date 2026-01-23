@@ -45,7 +45,7 @@ $resultado = $conexion->query($sql);
     <body>
         <header>
             <div class="contenedor_logo">
-                <img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" />
+                <a href="index.php"><img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
                 <h1>CINE ELORRIETA</h1>
                 <a href="logout.php">Cerrar Sesion</a>
 
@@ -104,7 +104,7 @@ $resultado = $conexion->query($sql);
                 <p>Fecha de Inicio: <?php echo $peli['FecHoraIni'] ?></p>
                 <p>Fecha de Fin: <?php echo $peli['FecHoraFin'] ?></p>
                 <p>Precio: <?php echo $peli['Precio'] ?>€</p>
-                <p><?php echo $peli['Aforo'] ?> Entradas Disponibles</p>
+                <p>Entradas Disponibles: <?php echo $peli['Aforo'] ?></p>
             </div>
 
             <?php
