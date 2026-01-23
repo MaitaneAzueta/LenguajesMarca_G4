@@ -103,6 +103,7 @@ nav {
     min-height: 200px;
 }
 
+/* =========== FORMULARIO ==============================================*/
 /* Estilo para los campos que rellenar */
 input {
   padding: 10px 30px;
@@ -124,7 +125,7 @@ input[type="submit"] {
 
 
 
-/*Estilo para el footer*/
+/* =================== Estilo para el FOOTER =====================*/
 
 /*Estilos para el contenedor del footer*/
 .contenedor_footer{
@@ -182,9 +183,22 @@ input[type="submit"] {
 /*Estilos para index.html*/
 /*Estilo para el contenedor de las peliculas*/
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h2{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
 
 .contenedor_peliculas {
-     display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 25px;
     margin: 30px;
@@ -192,43 +206,63 @@ input[type="submit"] {
     max-width: 1200px;
 }
 
-.contenedor_pelicula h3{
-    font-size: 32px;
-    margin-bottom: 10px;
+.detalle_pelicula{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+
 }
 
-
-.imagenes_texto_pelicula {
-    width: 260px;
+.imagenes_texto_pelicula img{
+    width: 38%;
     border-radius: 10px;
 }
 
+.contenedor_pelicula{
+    background-color: #f8e7cd;
+    padding: 20px;
+    border-radius: 12px;
+    width: 58%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.contenedor_pelicula h3{
+    font-size: 32px;
+    margin-top: 0px;
+}
+
+.contenedor_pelicula p{
+    margin-top: 10px;
+}
 
 .texto_descripcion{
     font-size: 17px;
     line-height: 1.5;
 }
-
 .duracion{
     margin-top: 10px;
 }
 
+/* ahora las sesiones */
 .sesiones_peliculas{
     display: flex;
-    gap: 20px;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .salas{
     background-color: #e7ba8f;
     padding: 18px;
     border-radius: 12px;
-    width: 33%;
-    min-width: 220px;
+    width: 25%;
+    min-width: 25rem;
+    margin: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .precio{
-    font-weight: bold;
 }
