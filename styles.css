@@ -182,35 +182,18 @@ input[type="submit"] {
 /*Estilos para index.html*/
 /*Estilo para el contenedor de las peliculas*/
 
-.contenedor_mensaje_peliculas{
-    background-color: #facea5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 44150px;
-    margin: 1px;
-}
-.contenedor_general_peliculas {
-    display: flex;
-    gap: 30px;
-    background-color: #f8e7cd;
-    padding: 30px;
-    margin: 30px auto;
-    max-width: 1100px;
+
+.contenedor_peliculas {
+     display: flex;
+    gap: 20px;
+    padding: 25px;
+    margin: 30px;
     border-radius: 12px;
-    align-items: flex-start;
+    max-width: 1200px;
 }
 
-.contenedor_pelicula{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-}
-/*Estilo para los subtitulos de las peliculas*/
-.h2_subtitulo_peliculas{
-    font-size: 35px;
+.contenedor_pelicula h3{
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
@@ -222,21 +205,30 @@ input[type="submit"] {
 
 
 .texto_descripcion{
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5;
 }
 
-
+.duracion{
+    margin-top: 10px;
+}
 
 .sesiones_peliculas{
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .salas{
     background-color: #e7ba8f;
-    padding: 12px 18px;
-    border-radius: 8px;
+    padding: 18px;
+    border-radius: 12px;
+    width: 33%;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.precio{
+    font-weight: bold;
 }
