@@ -40,6 +40,7 @@ $resultado = $conexion->query($sql);
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="styles.css" />
+            <script type="text/javascript" src="general.js"></script>
             <title>Cine Elorrieta-Errekamari</title>
     </head>
     <body>
@@ -104,7 +105,16 @@ $resultado = $conexion->query($sql);
                 <p>Fecha de Inicio: <?php echo $peli['FecHoraIni'] ?></p>
                 <p>Fecha de Fin: <?php echo $peli['FecHoraFin'] ?></p>
                 <p>Precio: <?php echo $peli['Precio'] ?>€</p>
-                <p>Entradas Disponibles: <?php echo $peli['Aforo'] ?></p>
+                <p>Entradas Disponibles: <span id="stock<?php echo $peli['IDPelicula']; ?>">><?php echo $peli['Aforo']; ?></span></p>
+
+                <?php if ($peli['Aforo'] > 0) { ?>
+                    <button type ="button" 
+                    id = "btn <?php echo $peli['IDPelicula']; ?>"
+                    onclick = "comprarUna('<?php echo $peli['IDPelicula']; ?>')">
+                    Comprar Entrada
+                    </button>
+                    <?php } ?>
+                </div>
             </div>
 
             <?php
