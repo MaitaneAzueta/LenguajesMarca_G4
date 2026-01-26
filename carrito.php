@@ -2,10 +2,10 @@
 sala, pelicula, fecha y hora-->
 
 <!--Aparte debera de tener un apartado de confirmacion, lo tipico 
-de "Esta seguri de querer comprar estas entradas, y a la hora de 
+de "Esta seguro de querer comprar esta entrada, y a la hora de 
 comprar las entradas debera reflejarse en la bbdd-->
 
-<!--Tampoco podra se podra comprar mas de una entrada por compra-->
+<!--Tampoco se podra comprar mas de una entrada por compra-->
 
 <?php
 session_start();
@@ -51,7 +51,7 @@ if (isset($_SESSION['mensaje'])) {
                 <h1>CINE ELORRIETA</h1>
                 <a href="logout.php">Cerrar Sesion</a>
 
-<!----Se mostrara el mensaje "Hola, x-->
+<!----Se mostrara el mensaje "Hola, x"-->
             <?php 
         if(isset($_SESSION['cliente'])) { 
             echo "Hola " . $_SESSION['cliente']; 
