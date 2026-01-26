@@ -214,7 +214,7 @@ main h2{
 }
 
 .imagenes_texto_pelicula img{
-    width: 38%;
+    width: 48%;
     border-radius: 10px;
 }
 
@@ -243,7 +243,7 @@ main h2{
     line-height: 1.5;
 }
 .duracion{
-    margin-top: 10px;
+    margin-top: 100px;
 }
 
 /* ahora las sesiones */
@@ -251,14 +251,13 @@ main h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 20px;
 }
 
 .salas{
     background-color: #e7ba8f;
     padding: 18px;
     border-radius: 12px;
-    width: 25%;
+    width: 10%;
     min-width: 25rem;
     margin: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
