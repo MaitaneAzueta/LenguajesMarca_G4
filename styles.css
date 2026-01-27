@@ -1,3 +1,5 @@
+
+
 /*Estilo general para toda la página*/
 body{
     background-color: #cca37d;
@@ -11,23 +13,24 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 6px;
+    padding: 2rem;
     gap: 20px;
 }
 
 /*Estilo general para el logo*/
 .Logotipo {
-    width: 300px;
+    width: 15rem;
 }
 
 /*Estilo general para el usuario*/
 .usuario {
-    width: 170px;
+
+    width: 10rem;
 }
 
 /*Estilo general para los h1.*/
 h1 {
-    font-size: 50px;
+    font-size: 3rem;
     font-family: "Verdana", "Geneva", sans-serif;
 }
 
@@ -74,7 +77,7 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 550px;
+    height: 30rem;
     margin: 1px;
 }
 
@@ -134,8 +137,7 @@ input[type="submit"] {
     justify-content: space-around;
     align-items: center;
     gap: 30px;
-    max-width: 6000px;
-    padding: 20px;
+    padding: 1rem;
 }
 
 /*Estilo para la imagen del footer creative commons*/
@@ -155,7 +157,6 @@ input[type="submit"] {
 
 /*Estilo para el contenedor de las imagenes de las redes sociales del footer*/
 .imagenes_contenedor_footer {
-    grid-area: imagenes_f;
     text-align: center;
     order: 3;
 }
@@ -186,7 +187,8 @@ input[type="submit"] {
 main{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-around;
+    background-color: #facea5;
 }
 
 main h2{
@@ -203,30 +205,34 @@ main h2{
     padding: 25px;
     margin: 30px;
     border-radius: 12px;
-    max-width: 1200px;
 }
 
 .detalle_pelicula{
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
-
+    justify-content: space-around;
 }
 
+.imagenes_texto_pelicula{
+    width: 20rem;
+    margin-right: 1rem;
+}
 .imagenes_texto_pelicula img{
-    width: 48%;
+    width: 100%;
     border-radius: 10px;
 }
 
 .contenedor_pelicula{
-    background-color: #f8e7cd;
-    padding: 20px;
+    background-color: #e7ba8f ;
+    padding: 1rem;
     border-radius: 12px;
-    width: 58%;
+    width: 68%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 .contenedor_pelicula h3{
@@ -234,16 +240,13 @@ main h2{
     margin-top: 0px;
 }
 
-.contenedor_pelicula p{
-    margin-top: 10px;
-}
-
 .texto_descripcion{
     font-size: 17px;
     line-height: 1.5;
 }
+
 .duracion{
-    margin-top: 100px;
+    margin-top: 5px;
 }
 
 /* ahora las sesiones */
@@ -251,15 +254,22 @@ main h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
+.sesiones_peliculas a{
+    text-decoration: none;
+    color: black;
+}
+
+
 .salas{
-    background-color: #e7ba8f;
+    background-color: #f8e0bc;
     padding: 18px;
     border-radius: 12px;
     width: 10%;
-    min-width: 25rem;
-    margin: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    min-width: 20rem;
+    margin: 1rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
 }
 
