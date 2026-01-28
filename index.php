@@ -23,14 +23,13 @@ if (isset($_SESSION['mensaje'])) {
     $mensaje = '';
 }
 
-$sql = "SELECT p.IDPelicula, p.NomPelicula, p.Duracion, p.Portada, g.NomGenero, p.DesPelicula, 
-s.NomSala, s.Aforo,
-ses.FecHoraIni, ses.FecHoraFin, ses.Precio
-FROM pelicula p
-INNER JOIN genero g ON p.IDGenero = g.IDGenero
-INNER JOIN sesion ses ON p.IDPelicula = ses.IDPelicula
-INNER JOIN sala s ON ses.IDSala = s.IDSala
-ORDER BY p.IDPelicula, ses.FecHoraIni";
+$sql = "SELECT p.IDPelicula, p.NomPelicula, p.Portada, p.Duracion, 
+               g.NomGenero, s.NomSala, ses.IDSesion, ses.FecHoraIni, ses.FecHoraFin, s.Aforo, ses.Precio, p.DesPelicula
+        FROM pelicula p
+        INNER JOIN genero g ON p.IDGenero = g.IDGenero
+        INNER JOIN sesion ses ON p.IDPelicula = ses.IDPelicula
+        INNER JOIN sala s ON ses.IDSala = s.IDSala";
+
 $resultado = $conexion->query($sql);
 ?>
 
@@ -62,12 +61,12 @@ $resultado = $conexion->query($sql);
             <nav>
             <div class="contenedor_menu">
                 <a href="index.php"> Películas</a>
-                <a href="carrito.html"> Carrito</a>
+                <a href="carrito.php"> Carrito</a>
             </div>
             </nav>
         </header>
         <main>
-            <h2>Cine</h2>
+            <h2>Nuestras Peliculas</h2>
 
             <?php
                 $idPeliculaAnterior = null;
@@ -107,13 +106,15 @@ $resultado = $conexion->query($sql);
                 <p>Precio: <?php echo $peli['Precio'] ?>€</p>
                 <p>Entradas Disponibles: <span id="stock<?php echo $peli['IDPelicula']; ?>">><?php echo $peli['Aforo']; ?></span></p>
 
-                <?php if ($peli['Aforo'] > 0) { ?>
-                    <button type ="button" 
-                    id = "btn <?php echo $peli['IDPelicula']; ?>"
-                    onclick = "comprarUna('<?php echo $peli['IDPelicula']; ?>')">
-                    Comprar Entrada
-                    </button>
-                    <?php } ?>
+                <?php if ($peli['Aforo'] > 0) { 
+    // Si no tienes IDSesion, usaremos IDPelicula solo para probar si el botón funciona
+    $idEnviar = isset($peli['IDSesion']) ? $peli['IDSesion'] : (isset($peli['IDPelicula']) ? $peli['IDPelicula'] : '0');
+?>
+    <button type="button" 
+            onclick="comprarUna(<?php echo $idEnviar; ?>)">
+            Comprar Entrada
+    </button>
+<?php } ?>
                 </div>
             </div>
 

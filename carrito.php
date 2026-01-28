@@ -10,7 +10,6 @@ comprar las entradas debera reflejarse en la bbdd-->
 <?php
 session_start();
 
-// Parametros para la conexion a la base de datos
 $servername = "localhost:3359";
 $username = "root";
 $password = "";
@@ -18,61 +17,57 @@ $dbname = "reto2_g4";
 
 $conexion = new mysqli($servername, $username, $password, $dbname);
 
-if ($conexion->connect_error) {
-    die("Fallo en la conexión: " . $conn->connect_error);
+$idSesion = null;
+if (isset($_SESSION['ultima_sesion_comprada'])) {
+    $idSesion = $_SESSION['ultima_sesion_comprada'];
 }
 
-// Cuando inicie sesion se mostrara aqui
-if (isset($_SESSION['mensaje'])) {
-// Para poder usarlo en Javascript
-    $mensaje = $_SESSION['mensaje'];    
-// Para que se elimine el mensaje cuando se cierre sesion
-    unset($_SESSION['mensaje']);
-} else {
-    $mensaje = '';
+$datosCompra = null;
+if ($idSesion !== null) {
+    $sql = "SELECT p.NomPelicula, s.NomSala, ses.FecHoraIni
+            FROM sesion ses
+            INNER JOIN pelicula p ON p.IDPelicula = ses.IDPelicula
+            INNER JOIN sala s ON ses.IDSala = s.IDSala
+            WHERE ses.IDSesion = $idSesion";
+
+    $resultado = $conexion->query($sql);
+    if ($resultado) {
+        if ($resultado->num_rows > 0) {
+            $datosCompra = $resultado->fetch_assoc();
+        }
+    }
 }
-
-//FALTA LA PARTE PARA QUE PILLE X COSA DE LA BASE DE DATOS :)
-
 ?>
-
 <!DOCTYPE html>
-    <html lang="es">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="styles.css" />
-            <title>Cine Elorrieta-Errekamari</title>
-    </head>
-    <body>
-        <header>
-            <div class="contenedor_logo">
-                <a href="index.php"><img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
-                <h1>CINE ELORRIETA</h1>
-                <a href="logout.php">Cerrar Sesion</a>
-
-<!----Se mostrara el mensaje "Hola, x"-->
-            <?php 
-        if(isset($_SESSION['cliente'])) { 
-            echo "Hola " . $_SESSION['cliente']; 
-        } 
-    ?>
-
-                <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
-            </div>
-            <nav>
-            <div class="contenedor_menu">
-                <a href="index.php"> Películas</a>
-                <a href="carrito.html"> Carrito</a>
-            </div>
-            </nav>
-        </header>
-        <main>
-
-        </main>
-        </body>
-        <footer>
-            
-        </footer>
-    </html>
-
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Cine Elorrieta</title>
+</head>
+<body>
+    <header>
+        <h1>CINE ELORRIETA</h1>
+        <nav>
+            <a href="index.php">Películas</a>
+            <a href="carrito.php">Carrito</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Resumen de Entrada</h2>
+        <?php if ($datosCompra !== null) { ?>
+            <section class="detalle-carrito">
+                <p><strong>Usuario:</strong> <?php echo isset($_SESSION['cliente']) ? $_SESSION['cliente'] : 'Julio'; ?></p>
+                <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
+                <p><strong>Película:</strong> <?php echo $datosCompra['NomPelicula']; ?></p>
+                <p><strong>Sala:</strong> <?php echo $datosCompra['NomSala']; ?></p>
+                <p><strong>Fecha y Hora:</strong> <?php echo $datosCompra['FecHoraIni']; ?></p>
+            </section>
+        <?php } else { ?>
+            <p>No hay entrada seleccionada. ID detectado: <?php echo $idSesion; ?></p>
+            <p>Asegúrate de que el botón en index.php envía el IDSesion correcto.</p>
+            <a href="index.php">Volver a la cartelera</a>
+        <?php } ?>
+    </main>
+</body>
+</html>
