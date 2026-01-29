@@ -40,24 +40,28 @@ $resultado = $conexion->query($sql);
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="styles.css" />
             <script type="text/javascript" src="general.js"></script>
+            <link rel="stylesheet" type="text/css" href="styles.css">
             <title>Cine Elorrieta-Errekamari</title>
-    </head>
+        </head>
     <body>
         <header>
             <div class="contenedor_logo">
                 <a href="index.php"><img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
                 <h1>CINE ELORRIETA</h1>
-                <a href="logout.php">Cerrar Sesion</a>
-
-<!----Se mostrara el mensaje "Hola, x-->
-            <?php 
-        if(isset($_SESSION['cliente'])) { 
-            echo "Hola " . $_SESSION['cliente']; 
-        } 
-    ?>
-
+                <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
                 <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>
             </div>
+
+    <!----Se mostrara el mensaje "Hola, x-->
+        <div class="saludo_usuario">
+           <?php 
+                if(isset($_SESSION['cliente'])) { 
+                    echo "Hola " . $_SESSION['cliente']; 
+                } 
+    ?>
+        </div>
+
+                
             <nav>
             <div class="contenedor_menu">
                 <a href="index.php"> Películas</a>
@@ -89,24 +93,38 @@ $resultado = $conexion->query($sql);
                         }
 
             ?>
-            <section class="pelicula">
-                <img src="<?php echo $peli['Portada']; ?>" alt="Portada de peliculas" />
-                <h3><?php echo $peli['NomPelicula']; ?></h3>
-                <p><strong>Descripcion:</strong> <?php echo $peli['DesPelicula']; ?></p>
-                <p><strong>Género:</strong> <?php echo $peli['NomGenero']; ?></p>
-                <p><strong>Duración:</strong> <?php echo $tiempo; ?></p>
-                <div class="contenedor-sesiones"> <?php
-            } 
-            ?>
-            <hr>
-            <div class="sesion">
-                <h4><strong><?php echo $peli['NomSala'] ?></strong></h4>
-                <p>Fecha de Inicio: <?php echo $peli['FecHoraIni'] ?></p>
-                <p>Fecha de Fin: <?php echo $peli['FecHoraFin'] ?></p>
-                <p>Precio: <?php echo $peli['Precio'] ?>€</p>
-                <p>Entradas Disponibles: <span id="stock<?php echo $peli['IDPelicula']; ?>">><?php echo $peli['Aforo']; ?></span></p>
+        <div class= "contenedor_peliculas">
+            <div class="detalle_pelicula">
 
-                <?php if ($peli['Aforo'] > 0) { 
+                <div class="imagenes_texto_pelicula">
+                    <img src="<?php echo $peli['Portada']; ?>" alt="Portada de peliculas" />
+                </div>
+
+                <div class="contenedor_pelicula">
+                    <h3><?php echo $peli['NomPelicula']; ?></h3>
+                    <p class="texto_descripcion"><strong>Descripcion:</strong> <?php echo $peli['DesPelicula']; ?></p>
+                    <p><strong>Género:</strong> <?php echo $peli['NomGenero']; ?></p>
+
+                    <div class="duracion">
+                        <p><strong>Duración:</strong> <?php echo $tiempo; ?></p>
+                    </div>
+                </div> <?php
+                }
+                ?>
+            </div>
+            <div class="sesiones_peliculas">
+                <div class="salas">
+                    <h4><strong><?php echo $peli['NomSala'] ?></strong></h4>
+                    <p>Fecha de Inicio: <?php echo $peli['FecHoraIni'] ?></p>
+                    <p>Fecha de Fin: <?php echo $peli['FecHoraFin'] ?></p>
+                    <p>Precio: <?php echo $peli['Precio'] ?>€</p>
+                    <p>Entradas Disponibles: <span id="stock<?php echo $peli['IDPelicula']; ?>">><?php echo $peli['Aforo']; ?></span></p>
+                
+        
+
+          <?php if ($peli['Aforo'] > 0) { 
+
+    
     // Si no tienes IDSesion, usaremos IDPelicula solo para probar si el botón funciona
     $idEnviar = isset($peli['IDSesion']) ? $peli['IDSesion'] : (isset($peli['IDPelicula']) ? $peli['IDPelicula'] : '0');
 ?>
@@ -114,9 +132,14 @@ $resultado = $conexion->query($sql);
             onclick="comprarUna(<?php echo $idEnviar; ?>)">
             Comprar Entrada
     </button>
-<?php } ?>
-                </div>
+
+                
             </div>
+
+    
+<?php } ?>
+                
+        
 
             <?php
                 $idPeliculaAnterior = $peli['IDPelicula'];
@@ -127,7 +150,7 @@ $resultado = $conexion->query($sql);
                 }
             $conexion->close();
             ?>
-
+        </div>
         </main>
         </body>
         <footer>

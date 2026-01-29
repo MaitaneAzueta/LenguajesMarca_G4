@@ -3,13 +3,13 @@
 session_start();
 
 // Parametros para la conexion a la base de datos
-$servername = "localhost:3306";
+$servername = "localhost:3359";
 $username = "root";
 $password = "";
 $dbname = "reto2_g4";
 
 // Se "hace" la conexion
-$conn = new mysqli($servername, $username, $password, $dbname, 3306);
+$conn = new mysqli($servername, $username, $password, $dbname, 3359);
 
 // Se verifica la conexion
 if ($conn->connect_error) {
