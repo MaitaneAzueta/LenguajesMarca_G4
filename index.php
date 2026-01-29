@@ -46,7 +46,7 @@ $resultado = $conexion->query($sql);
     <body>
         <header>
             <div class="contenedor_logo">
-                <a href="index.php"><img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
+                <a href="index.php"><img class="logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
                 <h1>CINE ELORRIETA</h1>
                 <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
                 <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario de Cine Elorrieta-Errekamari"/></a>

@@ -51,7 +51,7 @@ if ($idSesion !== null) {
     <body>
         <header>
             <div class="contenedor_logo">
-                <a href="index.php"><img class="Logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
+                <a href="index.php"><img class="logotipo" src="header/image_logo.png" alt="Logotipo de Cine Elorrieta-Errekamari" /></a>
                 <h1>CINE ELORRIETA</h1>
                 <a href="logout.php">Cerrar Sesion</a>
 

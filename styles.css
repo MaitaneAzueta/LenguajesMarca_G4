@@ -3,6 +3,8 @@
 /*Estilo general para toda la página*/
 body{
     background-color: #cca37d;
+    width: 100%;
+    min-width: 50px;
 }
 
 /*Estilo para el header*/
@@ -15,23 +17,28 @@ body{
     justify-content: space-between;
     padding: 2rem;
     gap: 20px;
+    width: 100%;
+    min-width: 100px;
 }
 
 /*Estilo general para el logo*/
-.Logotipo {
+.logotipo {
     width: 50%;
+    min-width: 150px;
 }
 
 /*Estilo general para el usuario*/
 .usuario {
     width: 40%;
+    min-width: 100px;
 }
-
 
 /*Estilo general para los h1.*/
 h1 {
-    font-size: 3rem;
+    width: 100%;
+    font-size: 33px;
     font-family: "Verdana", "Geneva", sans-serif;
+    min-width: 100px;
 }
 
 
@@ -77,13 +84,13 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 30rem;
+    width: 100%;
     margin: 1px;
 }
 
  /*Estilo para el título del mensaje*/
 .mensaje-titulo{
-    font-size: 50px;
+    font-size: 200%;
     color: rgb(0, 0, 0);
     margin-top: -50px;
     margin-bottom: 30px;
@@ -143,7 +150,6 @@ input[type="submit"] {
 /*Estilo para la imagen del footer creative commons*/
 .creative_commons {
     width: 10%;
-    height: 4rem;
     max-width: 80%;
     order: 1;
 }
@@ -164,7 +170,7 @@ input[type="submit"] {
 /*Estilo para las imagenes redes sociales*/
 .imagenes_redessociales {
     width: 30%;
-    height: 4rem;
+    max-width: 80px;
 }
 
 /*Estilo para que las imagenes redes sociales cambien de color*/
@@ -187,12 +193,17 @@ input[type="submit"] {
 main{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #facea5;
+    align-content: flex-start;
+    width: 100%;
+    min-width: 100px;
 }
 
 main h2{
-    font-size: 40px;
+    width: 100%;
+    min-width: 100px;
+    font-size: 30px;
     text-align: center;
     margin-top: 30px;
 }
@@ -201,22 +212,23 @@ main h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 25px;
-    margin: 30px;
+    margin: 0;
+    padding: 20px;
     border-radius: 12px;
+    width: 100%;
 }
 
 .detalle_pelicula{
     display: flex;
     flex-direction: row;
-    flex-wrap:nowrap;
+    flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
+    min-width:300px ;
 }
 
 .imagenes_texto_pelicula{
     width: 20rem;
-    margin-right: 1rem;
 }
 .imagenes_texto_pelicula img{
     width: 100%;
@@ -228,7 +240,8 @@ main h2{
     background-color: #e7ba8f ;
     padding: 1rem;
     border-radius: 12px;
-    width: 68%;
+    width: 58%;
+    min-width: 70%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
@@ -268,8 +281,8 @@ main h2{
     background-color: #f8e0bc;
     padding: 18px;
     border-radius: 12px;
-    width: 10%;
-    min-width: 20rem;
+    width: 80%;
+    min-width: 350px;
     margin: 1rem;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
 }
