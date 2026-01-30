@@ -34,6 +34,9 @@ body{
     min-width: 100px;
 }
 
+.usuario a{
+    margin-right: 10px;
+}
 /*Estilo general para los h1.*/
 h1 {
     width: 100%;
