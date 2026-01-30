@@ -1,3 +1,17 @@
+function verificar() {
+    if (window.location.search.includes("errorea=1")) {
+        alert("Usuario o contraseña incorrectos");
+
+        window.history.replaceState({}, '', window.location.pathname);
+    }
+}
+
+verificar();
+
+function carrito() {
+    alert("Producto añadido al carrito");
+}
+
 function comprarUna(idSesion) {
     console.log("Enviando ID:", idSesion);
     if (idSesion && idSesion !== 0) {

@@ -26,7 +26,7 @@ $datosCompra = null;
 if (isset($_SESSION['carrito_sesion'])) {
     $idSesion = $_SESSION['carrito_sesion'];
     
-    $sql = "SELECT p.NomPelicula, ses.Precio, s.NomSala, ses.FecHoraIni, p.Portada
+    $sql = "SELECT p.NomPelicula, ses.Precio, s.NomSala, ses.FecHoraIni, ses.FecHoraFin, p.Portada
             FROM sesion ses
             INNER JOIN pelicula p ON p.IDPelicula = ses.IDPelicula
             INNER JOIN sala s ON ses.IDSala = s.IDSala
@@ -81,7 +81,8 @@ if (isset($_SESSION['carrito_sesion'])) {
                     <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
                     <p><strong>Película:</strong> <?php echo htmlspecialchars($datosCompra['NomPelicula']); ?></p>
                     <p><strong>Sala:</strong> <?php echo htmlspecialchars($datosCompra['NomSala']); ?></p>
-                    <p><strong>Fecha y Hora:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraIni']); ?></p>
+                    <p><strong>Fecha y Hora Inicio:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraIni']); ?></p>
+                    <P><strong>Fecha y Hora Fin:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraFin']); ?></p>
                     <p><strong>Precio:</strong> €<?php echo number_format($datosCompra['Precio'], 2); ?></p>
                 </div>
 

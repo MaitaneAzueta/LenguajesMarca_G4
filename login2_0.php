@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
     exit();
 } else {
     // Manda un error via url
-    header("Location: ../index.html?errorea=1");
+    header ("Location: ../index.html?errorea=1");
     exit();
 }
 
