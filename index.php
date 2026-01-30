@@ -89,12 +89,13 @@ $resultado = $conexion->query($sql);
                     <h4><strong><?= $peli['NomSala'] ?></strong></h4>
                     <p>Fecha de Inicio: <?= $peli['FecHoraIni'] ?></p>
                     <p>Fecha de Fin: <?= $peli['FecHoraFin'] ?></p>
-                    <p>Precio: <?= $peli['Precio'] ?>€</p>
+                    <p class="precio">Precio: <?= $peli['Precio'] ?>€</p>
                     <p>Entradas: <span id="stock<?= $peli['IDSesion'] ?>"><?= $peli['Aforo'] ?></span></p>
                     <?php if ($peli['Aforo'] > 0) { ?>
                         <button type="button" onclick="comprarUna(<?= $peli['IDSesion'] ?>)">Comprar</button>
                     <?php } ?>
                 </div>
+            </div>
         <?php 
             }
             echo "</div></div>"; 
