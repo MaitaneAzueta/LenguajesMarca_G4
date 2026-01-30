@@ -3,8 +3,7 @@
 /*Estilo general para toda la página*/
 body{
     background-color: #cca37d;
-    width: 100%;
-    min-width: 50px;
+
 }
 
 /*Estilos para el header*/
@@ -15,11 +14,8 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     padding: 2rem;
-    gap: 20px;
     width: 100%;
-    min-width: 100px;
 }
 
 /*Estilo general para el logo*/
@@ -34,15 +30,11 @@ body{
     min-width: 100px;
 }
 
-.usuario a{
-    margin-right: 10px;
-}
 /*Estilo general para los h1.*/
 h1 {
     width: 100%;
     font-size: 33px;
     font-family: "Verdana", "Geneva", sans-serif;
-    min-width: 100px;
 }
 
 
@@ -199,8 +191,7 @@ main{
     justify-content: space-between;
     background-color: #facea5;
     align-content: flex-start;
-    width: 100%;
-    min-width: 100px;
+    
 }
 
 main h2{
@@ -215,10 +206,7 @@ main h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 20px;
     border-radius: 12px;
-    width: 100%;
 }
 
 .detalle_pelicula{
@@ -226,12 +214,11 @@ main h2{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 100%;
-    min-width:300px ;
 }
 
 .imagenes_texto_pelicula{
     width: 20rem;
+    min-width: 5rem;
 }
 .imagenes_texto_pelicula img{
     width: 100%;
@@ -254,7 +241,6 @@ main h2{
 
 .contenedor_pelicula h3{
     font-size: 32px;
-    margin-top: 0px;
 }
 
 .texto_descripcion{
