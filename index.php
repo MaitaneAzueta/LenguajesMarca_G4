@@ -74,10 +74,10 @@ $resultado = $conexion->query($sql);
                 <div class="contenedor_pelicula">
                     <h3><?= $peli['NomPelicula'] ?></h3>
                     <p class="texto_descripcion"><strong>Descripcion:</strong> <?= $peli['DesPelicula'] ?></p>
-                <div class="duracion_genero">
-                    <p><strong>Género:</strong> <?= $peli['NomGenero'] ?> </p>
-                    <p><strong>Duración:</strong> <?= $tiempo ?></p>
-                </div>
+                    <div class="duracion_genero">
+                        <p><strong>Género:</strong> <?= $peli['NomGenero'] ?> </p>
+                        <p><strong>Duración:</strong> <?= $tiempo ?></p>
+                    </div>
                 </div>
             </div>
             <div class="sesiones_peliculas">
