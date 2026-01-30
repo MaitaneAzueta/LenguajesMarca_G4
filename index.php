@@ -66,26 +66,28 @@ $resultado = $conexion->query($sql);
                         $tiempo = "$m min";
                     }
         ?>
-        <div class="contenedor_peliculas">
-            <div class="detalle_pelicula">
-                <div class="imagenes_texto_pelicula">
-                    <img src="<?= $peli['Portada'] ?>" alt="Portada" />
-                </div>
-                <div class="contenedor_pelicula">
+    <div class="contenedor_peliculas">
+        <div class="detalle_pelicula">
+            <div class="imagenes_texto_pelicula">
+                <img src="<?= $peli['Portada'] ?>" alt="Portada" />
+            </div>
+
+            <div class="contenedor_pelicula">
                     <h3><?= $peli['NomPelicula'] ?></h3>
                     <p class="texto_descripcion"><strong>Descripcion:</strong> <?= $peli['DesPelicula'] ?></p>
                     <div class="duracion_genero">
                         <p><strong>Género:</strong> <?= $peli['NomGenero'] ?> </p>
                         <p><strong>Duración:</strong> <?= $tiempo ?></p>
                     </div>
-                </div>
             </div>
-            <div class="sesiones_peliculas">
+        </div>
+            <div class="sesiones_peliculas"> 
         <?php 
                 } 
                 $idPeliAnt = $peli['IDPelicula'];
         ?>
-                <div class="salas">
+            
+                <div class="salas"> 
                     <h4><strong><?= $peli['NomSala'] ?></strong></h4>
                     <p>Fecha de Inicio: <?= $peli['FecHoraIni'] ?></p>
                     <p>Fecha de Fin: <?= $peli['FecHoraFin'] ?></p>
@@ -94,11 +96,10 @@ $resultado = $conexion->query($sql);
                     <?php if ($peli['Aforo'] > 0) { ?>
                         <button type="button" onclick="comprarUna(<?= $peli['IDSesion'] ?>)">Comprar</button>
                     <?php } ?>
-                </div>
-            </div>
+                </div> 
         <?php 
             }
-            echo "</div></div>"; 
+            echo '</div></div>'; 
         } else {
             echo "<p> No hay peliculas disponibles </p>";
         }
