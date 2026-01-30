@@ -1,23 +1,14 @@
 <?php
 session_start();
+$conexion = new mysqli("localhost:3359", "root", "", "reto2_g4");
 
-$servername = "localhost:3359";
-$username = "root";
-$password = "";
-$dbname = "reto2_g4";
-
-$conexion = new mysqli($servername, $username, $password, $dbname);
-
-if ($conexion->connect_error) {
-    die("Fallo en la conexión: " . $conexion->connect_error);
-}
+if ($conexion->connect_error) die("Fallo: " . $conexion->connect_error);
 
 $mensaje = $_SESSION['mensaje'] ?? '';
 unset($_SESSION['mensaje']);
 
-$sql = "SELECT p.IDPelicula, p.NomPelicula, p.Portada, p.Duracion, 
-               g.NomGenero, s.NomSala, ses.IDSesion, ses.FecHoraIni, 
-               ses.FecHoraFin, s.Aforo, ses.Precio, p.DesPelicula
+$sql = "SELECT p.IDPelicula, p.NomPelicula, p.Portada, p.Duracion, p.DesPelicula,
+               g.NomGenero, s.NomSala, ses.IDSesion, ses.FecHoraIni, ses.FecHoraFin, s.Aforo, ses.Precio
         FROM pelicula p
         INNER JOIN genero g ON p.IDGenero = g.IDGenero
         INNER JOIN sesion ses ON p.IDPelicula = ses.IDPelicula
@@ -44,11 +35,9 @@ $resultado = $conexion->query($sql);
             <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
             <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
         </div>
-
         <div class="saludo_usuario">
             <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
         </div>
-                
         <nav>
             <div class="contenedor_menu">
                 <a href="index.php"> Películas</a>
@@ -59,57 +48,55 @@ $resultado = $conexion->query($sql);
 
     <main>
         <h2>Nuestras Peliculas</h2>
-
         <?php
-        $idPeliculaAnterior = null;
-        if ($resultado && $resultado->num_rows > 0):
-            while($peli = $resultado->fetch_assoc()):
-                
-                if ($peli['IDPelicula'] !== $idPeliculaAnterior):
-                    if ($idPeliculaAnterior !== null) echo "</div></div>"; // Cierra sesiones y contenedor_peliculas
+        $idPeliAnt = null;
+        if ($resultado && $resultado->num_rows > 0) {
+            while($peli = $resultado->fetch_assoc()) {
+                if ($peli['IDPelicula'] !== $idPeliAnt) {
+                    if ($idPeliAnt !== null) echo "</div></div>"; // Cierra sesiones y contenedor anterior
 
-                    $horas = floor($peli['Duracion'] / 60);
-                    $minutos = $peli['Duracion'] % 60;
-                    $tiempo = ($horas > 0 ? "$horas hora/s " : "") . ($minutos > 0 ? "y $minutos minutos" : "");
+                    $h = floor($peli['Duracion'] / 60);
+                    $m = $peli['Duracion'] % 60;
+                    
+                    if ($h > 0 && $m > 0) {
+                        $tiempo = "$h h y $m min";
+                    } else if ($h > 0) {
+                        $tiempo = "$h h";
+                    } else {
+                        $tiempo = "$m min";
+                    }
         ?>
         <div class="contenedor_peliculas">
             <div class="detalle_pelicula">
-                <div class="imagenes_texto_pelicula">
-                    <img src="<?= $peli['Portada'] ?>" alt="Portada" />
-                </div>
+                <div class="imagenes_texto_pelicula"><img src="<?= $peli['Portada'] ?>" alt="Portada" /></div>
                 <div class="contenedor_pelicula">
                     <h3><?= $peli['NomPelicula'] ?></h3>
                     <p class="texto_descripcion"><strong>Descripcion:</strong> <?= $peli['DesPelicula'] ?></p>
-                    <p><strong>Género:</strong> <?= $peli['NomGenero'] ?></p>
-                    <div class="duracion">
-                        <p><strong>Duración:</strong> <?= $tiempo ?></p>
-                    </div>
+                    <p><strong>Género:</strong> <?= $peli['NomGenero'] ?> </p>
+                    <p><strong>Duración:</strong> <?= $tiempo ?></p>
                 </div>
             </div>
             <div class="sesiones_peliculas">
         <?php 
-                endif; 
+                } 
+                $idPeliAnt = $peli['IDPelicula'];
         ?>
                 <div class="salas">
                     <h4><strong><?= $peli['NomSala'] ?></strong></h4>
                     <p>Fecha de Inicio: <?= $peli['FecHoraIni'] ?></p>
                     <p>Fecha de Fin: <?= $peli['FecHoraFin'] ?></p>
                     <p>Precio: <?= $peli['Precio'] ?>€</p>
-                    <p>Entradas Disponibles: <span id="stock<?= $peli['IDSesion'] ?>"><?= $peli['Aforo'] ?></span></p>
-                    
-                    <?php if ($peli['Aforo'] > 0): ?>
-                        <button type="button" onclick="comprarUna(<?= $peli['IDSesion'] ?>)">
-                            Comprar Entrada
-                        </button>
-                    <?php endif; ?>
+                    <p>Entradas: <span id="stock<?= $peli['IDSesion'] ?>"><?= $peli['Aforo'] ?></span></p>
+                    <?php if ($peli['Aforo'] > 0) { ?>
+                        <button type="button" onclick="comprarUna(<?= $peli['IDSesion'] ?>)">Comprar</button>
+                    <?php } ?>
                 </div>
-        <?php
-                $idPeliculaAnterior = $peli['IDPelicula'];
-            endwhile;
+        <?php 
+            }
             echo "</div></div>"; 
-        else:
+        } else {
             echo "<p> No hay peliculas disponibles </p>";
-        endif;
+        }
         $conexion->close();
         ?>
     </main>
@@ -121,9 +108,9 @@ $resultado = $conexion->query($sql);
                 <p>© 2026 Elorrieta Cines — Todos los derechos reservados</p>
             </div>
             <div class="imagenes_contenedor_footer">
-                <a href="https://www.facebook.com/"><img class="imagenes_redessociales" src="footer/facebook.png" alt="FB"/></a>
-                <a href="https://www.instagram.com/"><img class="imagenes_redessociales" src="footer/instagram.png" alt="IG"/></a>
-                <a href="https://www.x.com/"><img class="imagenes_redessociales" src="footer/twitter.png" alt="X"/></a>
+                <a href="https://facebook.com"><img class="imagenes_redessociales" src="footer/facebook.png" alt="FB"/></a>
+                <a href="https://instagram.com"><img class="imagenes_redessociales" src="footer/instagram.png" alt="IG"/></a>
+                <a href="https://x.com"><img class="imagenes_redessociales" src="footer/twitter.png" alt="X"/></a>
             </div>
         </div>
     </footer>
