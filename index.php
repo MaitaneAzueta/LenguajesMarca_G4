@@ -33,10 +33,10 @@ $resultado = $conexion->query($sql);
             <a href="index.php"><img class="logotipo" src="header/image_logo.png" alt="Logotipo" /></a>
             <h1>CINE ELORRIETA</h1>
             <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
+            <div class="saludo_usuario">
+                <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
+            </div>
             <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
-        </div>
-        <div class="saludo_usuario">
-            <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
         </div>
         <nav>
             <div class="contenedor_menu">

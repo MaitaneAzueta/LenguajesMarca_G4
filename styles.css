@@ -3,8 +3,6 @@
 /*Estilo general para toda la página*/
 body{
     background-color: #cca37d;
-    width: 100%;
-    min-width: 50px;
 }
 
 /*Estilos para el header*/
@@ -17,9 +15,7 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
-    gap: 20px;
     width: 100%;
-    min-width: 100px;
 }
 
 /*Estilo general para el logo*/
