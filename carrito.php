@@ -68,23 +68,25 @@ if (isset($_SESSION['carrito_sesion'])) {
                             <a href="index.php">Volver a la cartelera</a>
                         </section>
                     <?php } else { ?>
-                    <section class="detalle-carrito">
-                        <img src="<?= htmlspecialchars($datosCompra['Portada']) ?>" alt="Portada" style="width:200px;"/>
-            
-                        <div class="info-ticket">
-                            <p><strong>Usuario:</strong> <?php echo isset($_SESSION['cliente']) ? htmlspecialchars($_SESSION['cliente']) : 'Invitado'; ?></p>
-                            <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
-                            <p><strong>Película:</strong> <?php echo htmlspecialchars($datosCompra['NomPelicula']); ?></p>
-                            <p><strong>Sala:</strong> <?php echo htmlspecialchars($datosCompra['NomSala']); ?></p>
-                            <p><strong>Fecha y Hora Inicio:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraIni']); ?></p>
-                            <P><strong>Fecha y Hora Fin:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraFin']); ?></p>
-                            <p><strong>Precio:</strong> €<?php echo number_format($datosCompra['Precio'], 2); ?></p>
-                        </div>
+                    <section>
+                        <div class="detalle-carrito">
+                            <img src="<?= htmlspecialchars($datosCompra['Portada']) ?>" alt="Portada" style="width:200px;"/>
+                
+                            <div class="info-ticket">
+                                <p><strong>Usuario:</strong> <?php echo isset($_SESSION['cliente']) ? htmlspecialchars($_SESSION['cliente']) : 'Invitado'; ?></p>
+                                <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
+                                <p><strong>Película:</strong> <?php echo htmlspecialchars($datosCompra['NomPelicula']); ?></p>
+                                <p><strong>Sala:</strong> <?php echo htmlspecialchars($datosCompra['NomSala']); ?></p>
+                                <p><strong>Fecha y Hora Inicio:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraIni']); ?></p>
+                                <P><strong>Fecha y Hora Fin:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraFin']); ?></p>
+                                <p><strong>Precio:</strong> €<?php echo number_format($datosCompra['Precio'], 2); ?></p>
+                            </div>
 
-                        <form action="finalizar_compra.php" method="POST">
-                            <button type="submit" name="accion" value="confirmar">Confirmar</button>
-                            <button type="submit" name="accion" value="cancelar">Cancelar</button>
-                        </form>
+                            <form action="finalizar_compra.php" method="POST">
+                                <button type="submit" name="accion" value="confirmar">Confirmar</button>
+                                <button type="submit" name="accion" value="cancelar">Cancelar</button>
+                            </form>
+                        </div>
                     </section>
                     <?php } ?>
                 </main>
