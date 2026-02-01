@@ -17,11 +17,9 @@ $accion = isset($_POST['accion']) ? $_POST['accion'] : "";
 if ($accion === "confirmar") {
     if (isset($_SESSION['carrito_sesion'])) {
         $idSesion = $_SESSION['carrito_sesion'];
-        
-        $dniCliente = "67856221B"; 
-
+        $dniCliente = "67856221B";
         $sqlCompra = "INSERT INTO compra (DNICliente, descuento, Canal, Importe) 
-                      VALUES ('$dniCliente', 0.0, 1, 15.0)";
+        VALUES ('$dniCliente', 0.0, 1, 15.0)";
         
         if ($conexion->query($sqlCompra)) {
             $idCompraGenerado = $conexion->insert_id;
@@ -43,10 +41,7 @@ if ($accion === "confirmar") {
         echo "No hay ninguna sesión en el carrito.";
     }
 } else {
-    if (isset($_SESSION['carrito_sesion'])) {
-        unset($_SESSION['carrito_sesion']);
-    }
-    header("Location: index.php?status=cancelado");
+    header("Location: carrito.php");
     exit();
 }
 
