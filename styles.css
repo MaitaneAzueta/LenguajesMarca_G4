@@ -24,16 +24,23 @@ header {
     margin-bottom: 2%;
 }
 
+.contenedor_logo a {
+    display: flex;       
+    width: min-content; 
+    margin-left: auto; 
+    padding: 0;
+}
+
 /*Estilo general para el logo*/
 .logotipo {
-    width: 50%;
-    min-width: 150px;
+    width: 100%;
+    min-width: 250px;
 }
 
 /*Estilo general para el usuario*/
 .usuario {
-    width: 50%;
-    min-width: 50px;
+    width: 100%;
+    min-width: 120px;
 }
 
 
@@ -102,7 +109,7 @@ nav {
 
 /* Estilo para el contenedor principal del mensaje */
 .mensaje-principal {
-    margin-top: 25px;
+    margin-top: 3rem;
     background-color: #f8e7cd;
     padding: 60px;
     border-radius: 12px;
@@ -114,6 +121,7 @@ nav {
     justify-content: center;
     text-align: center;
     min-height: 200px;
+    margin-bottom: 3rem;
 }
 
 /* =========== FORMULARIO ==============================================*/
@@ -146,7 +154,6 @@ input[type="submit"] {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 30px;
     padding: 1rem;
 }
 
@@ -299,3 +306,23 @@ main h2{
     color: #000000;
     margin-left: 1rem;
 }
+
+
+/*======================Estilos para carrito.php=====================*/
+.carrito-vacio{
+    width: 100%;
+    text-align: center;
+}
+
+.detalle-carrito{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.info.ticket{
+    background-color: #ecb785;
+
+
+}
+

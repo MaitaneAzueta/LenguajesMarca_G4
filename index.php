@@ -95,16 +95,15 @@ $resultado = $conexion->query($sql);
                     <?php if ($peli['Aforo'] > 0) { ?>
                         <button type="button" onclick="comprarUna(<?= $peli['IDSesion'] ?>)">Comprar</button>
                     <?php } ?>
-                </div> 
-
+                </div>
+                
                 <?php 
-                }
-                echo '</div></div>'; 
+                } 
                 } else {
                     echo "<p> No hay peliculas disponibles </p>";
                 }
             $conexion->close();
-            ?>
+            ?> 
 
             </main>
 
