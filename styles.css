@@ -316,13 +316,31 @@ main h2{
 
 .detalle-carrito{
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    padding: 1rem;
+    padding: 3rem;
+    border-radius: 12px;
+    background-color: #e7ba8f;
+    margin: 5%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.detalle-carrito img{
+    margin-right: 2rem;
+}
+
+.detalle-carrito button{
+    display: flex;
+    align-self: flex-end;
 }
 
 .info.ticket{
-    background-color: #ecb785;
-
-
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    justify-content: space-evenly;
 }
+
 
