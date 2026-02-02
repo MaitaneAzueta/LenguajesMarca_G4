@@ -47,7 +47,7 @@ if (isset($_SESSION['carrito_sesion'])) {
                     <h1>CINE ELORRIETA</h1>
                     <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
                     <div class="saludo_usuario">
-                        <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
+                        <?php if(isset($_SESSION['cliente'])) echo "Hola " . ($_SESSION['cliente']); ?>
                     </div>
                     <a href="login.php"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
                 </div>
@@ -74,12 +74,12 @@ if (isset($_SESSION['carrito_sesion'])) {
                             <img src="<?= htmlspecialchars($datosCompra['Portada']) ?>" alt="Portada" style="width:200px;"/>
                 
                             <div class="info-ticket">
-                                <p><strong>Usuario:</strong> <?php echo isset($_SESSION['cliente']) ? htmlspecialchars($_SESSION['cliente']) : 'Invitado'; ?></p>
+                                <p><strong>Usuario:</strong> <?php echo isset($_SESSION['cliente']) ? ($_SESSION['cliente']) : 'Invitado'; ?></p>
                                 <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
-                                <p><strong>Película:</strong> <?php echo htmlspecialchars($datosCompra['NomPelicula']); ?></p>
-                                <p><strong>Sala:</strong> <?php echo htmlspecialchars($datosCompra['NomSala']); ?></p>
-                                <p><strong>Fecha y Hora Inicio:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraIni']); ?></p>
-                                <P><strong>Fecha y Hora Fin:</strong> <?php echo htmlspecialchars($datosCompra['FecHoraFin']); ?></p>
+                                <p><strong>Película:</strong> <?php echo ($datosCompra['NomPelicula']); ?></p>
+                                <p><strong>Sala:</strong> <?php echo ($datosCompra['NomSala']); ?></p>
+                                <p><strong>Fecha y Hora Inicio:</strong> <?php echo ($datosCompra['FecHoraIni']); ?></p>
+                                <P><strong>Fecha y Hora Fin:</strong> <?php echo ($datosCompra['FecHoraFin']); ?></p>
                                 <p><strong>Precio:</strong> €<?php echo number_format($datosCompra['Precio'], 2); ?></p>
                             </div>
 

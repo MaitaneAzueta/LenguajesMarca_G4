@@ -25,7 +25,7 @@ unset($_SESSION['mensaje']);
                     <h1>CINE ELORRIETA</h1>
                     <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
                         <div class="saludo_usuario">
-                            <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
+                            <?php if(isset($_SESSION['cliente'])) echo "Hola " . ($_SESSION['cliente']); ?>
                         </div>
                     <a href="login.php"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
                 </div>
