@@ -350,10 +350,12 @@ main h2{
 
 
 @media (max-width: 768px) {
-    /* Cambia el header a columna para móviles */
     header {
         flex-direction: column;
         align-items: center;
+    }
+    .texto_contenedor_footer{
+        font-size: 1rem;
     }
 }
 

@@ -52,7 +52,7 @@ $resultado = $conexion->query($sql);
                 if ($resultado && $resultado->num_rows > 0) {
                     while($peli = $resultado->fetch_assoc()) {
                     if ($peli['IDPelicula'] !== $idPeliAnt) {
-                        if ($idPeliAnt !== null) echo "</div></div>"; // Cierra sesiones y contenedor anterior
+                        if ($idPeliAnt !== null) echo "</div></div>";
 
                             $h = floor($peli['Duracion'] / 60);
                             $m = $peli['Duracion'] % 60;
