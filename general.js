@@ -1,3 +1,14 @@
+window.onload = function() {
+    const enlacesLogin = document.querySelectorAll('.enlace-login');
+
+    enlacesLogin.forEach(function(enlace) {
+        enlace.addEventListener('click', function(event) {
+            alert("Necesitas iniciar sesión para acceder a esta sección.");
+            
+        });
+    });
+};
+
 function verificar() {
     if (window.location.search.includes("errorea=1")) {
         alert("Usuario o contraseña incorrectos");
