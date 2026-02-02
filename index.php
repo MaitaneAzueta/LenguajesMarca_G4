@@ -79,7 +79,6 @@ $resultado = $conexion->query($sql);
                                 <p><strong>Duración:</strong> <?= $tiempo ?></p>
                             </div>
                     </div>
-                </div>
                 <div class="sesiones_peliculas"> 
                 <?php 
                 } 
@@ -97,14 +96,15 @@ $resultado = $conexion->query($sql);
                     <?php } ?>
                 </div>
                 
-                <?php 
-                } 
+                <?php }
+                 
                 } else {
                     echo "<p> No hay peliculas disponibles </p>";
                 }
             $conexion->close();
             ?> 
-
+                </div>
+                </div>
             </main>
 
         <footer>
