@@ -79,6 +79,7 @@ $resultado = $conexion->query($sql);
                                 <p><strong>Duración:</strong> <?= $tiempo ?></p>
                             </div>
                     </div>
+
                 <div class="sesiones_peliculas"> 
                 <?php 
                 } 
