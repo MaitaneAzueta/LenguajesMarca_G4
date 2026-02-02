@@ -34,13 +34,13 @@ header {
 /*Estilo general para el logo*/
 .logotipo {
     width: 100%;
-    min-width: 250px;
+    min-width: 200px;
 }
 
 /*Estilo general para el usuario*/
 .usuario {
     width: 100%;
-    min-width: 120px;
+    min-width: 100px;
 }
 
 
@@ -159,8 +159,8 @@ input[type="submit"] {
 
 /*Estilo para la imagen del footer creative commons*/
 .creative_commons {
-    width: 10%;
-    max-width: 80%;
+    width: 100%;
+    max-width: 20%;
     order: 1;
 }
 
@@ -186,47 +186,6 @@ input[type="submit"] {
 /*Estilo para que las imagenes redes sociales cambien de color*/
 .imagenes_redessociales:hover {
     filter: grayscale(100%);
-}
-
-
-
-
-
-
-
-/* 1. Alinea la Foto y la Info de la película */
-.detalle_pelicula {
-    display: flex;
-    flex-direction: row; /* Fuerza foto a la izquierda, texto a la derecha */
-    gap: 30px;
-    margin-bottom: 30px;
-    align-items: flex-start;
-}
-
-/* 2. EL CAMBIO CLAVE: Contenedor de las sesiones */
-.sesiones_peliculas {
-    display: flex;       /* Esto pone las salas en fila */
-    flex-wrap: wrap;     /* Si no caben, bajan a la siguiente fila */
-    gap: 20px;           /* Espacio entre tarjetas */
-    justify-content: flex-start; 
-    width: 100%;
-}
-
-/* 3. Estilo de cada tarjeta de sala */
-.salas {
-    background-color: #f7e1c1; /* Color crema de tu imagen */
-    border-radius: 12px;
-    padding: 15px;
-    width: 280px;             /* Ancho fijo para que parezcan tarjetas */
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-/* 4. Asegura que la imagen no se deforme */
-.imagenes_texto_pelicula img {
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
 }
 
 
@@ -325,6 +284,9 @@ main h2{
 
 /*======================Estilos para index.php=======================*/
 
+
+
+
 /*Estilo para el saludo al usuario*/
 .saludo_usuario {
     font-size: 1rem;
@@ -335,17 +297,18 @@ main h2{
     margin: 1rem;
 }
 
+
 .cerrar_sesion{
     color: #000000;
     margin-left: 1rem;
 }
-
 
 /*======================Estilos para carrito.php=====================*/
 .carrito-vacio{
     width: 100%;
     text-align: center;
 }
+
 
 .detalle-carrito{
     display: flex;
@@ -358,12 +321,15 @@ main h2{
     margin: 5%;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
     align-self: flex-end;
+    flex-wrap: wrap;
 }
+
 
 .detalle-carrito img{
     margin-right: 2rem;
     border-radius: 12px;
 }
+
 
 .info.ticket{
     display: flex;
@@ -374,8 +340,28 @@ main h2{
     justify-content: space-evenly; 
 }
 
+
 .detalle-carrito button{
     align-self: center;
     margin-left: 2rem;
     align-items: flex-end;
+}
+
+
+
+@media (max-width: 768px) {
+    /* Cambia el header a columna para móviles */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1rem;  
+    }
+    .texto_contenedor_footer{
+        font-size: 1rem;
+    }
 }
