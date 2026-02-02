@@ -46,7 +46,8 @@ if (isset($_SESSION['carrito_sesion'])) {
                     <a href="index.php"><img class="logotipo" src="header/image_logo.png" alt="Logotipo" /></a>
                     <h1>CINE ELORRIETA</h1>
                     <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
-                    <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
+                    <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
+                    <a href="login.php"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
                 </div>
 
                 <div class="saludo_usuario">
@@ -73,7 +74,7 @@ if (isset($_SESSION['carrito_sesion'])) {
                             <img src="<?= htmlspecialchars($datosCompra['Portada']) ?>" alt="Portada" style="width:200px;"/>
                 
                             <div class="info-ticket">
-                                <p><strong>Usuario:</strong> <?php echo isset($_SESSION['cliente']) ? htmlspecialchars($_SESSION['cliente']) : 'Invitado'; ?></p>
+                                <p><strong>Usuario:</strong> <?php if(isset($_SESSION['cliente'])) echo htmlspecialchars($_SESSION['cliente']); ?></p>
                                 <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
                                 <p><strong>Película:</strong> <?php echo htmlspecialchars($datosCompra['NomPelicula']); ?></p>
                                 <p><strong>Sala:</strong> <?php echo htmlspecialchars($datosCompra['NomSala']); ?></p>
