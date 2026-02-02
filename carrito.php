@@ -49,7 +49,7 @@ if (isset($_SESSION['carrito_sesion'])) {
                     <div class="saludo_usuario">
                         <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
                     </div>
-                    <a href="login.html"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
+                    <a href="login.php"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
                 </div>
 
                 
