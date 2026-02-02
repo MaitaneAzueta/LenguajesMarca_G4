@@ -194,7 +194,40 @@ input[type="submit"] {
 
 
 
+/* 1. Alinea la Foto y la Info de la película */
+.detalle_pelicula {
+    display: flex;
+    flex-direction: row; /* Fuerza foto a la izquierda, texto a la derecha */
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
 
+/* 2. EL CAMBIO CLAVE: Contenedor de las sesiones */
+.sesiones_peliculas {
+    display: flex;       /* Esto pone las salas en fila */
+    flex-wrap: wrap;     /* Si no caben, bajan a la siguiente fila */
+    gap: 20px;           /* Espacio entre tarjetas */
+    justify-content: flex-start; 
+    width: 100%;
+}
+
+/* 3. Estilo de cada tarjeta de sala */
+.salas {
+    background-color: #f7e1c1; /* Color crema de tu imagen */
+    border-radius: 12px;
+    padding: 15px;
+    width: 280px;             /* Ancho fijo para que parezcan tarjetas */
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* 4. Asegura que la imagen no se deforme */
+.imagenes_texto_pelicula img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
 
 
 /*================Estilos para index.html===========================*/

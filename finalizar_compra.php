@@ -41,7 +41,10 @@ if ($accion === "confirmar") {
         echo "No hay ninguna sesión en el carrito.";
     }
 } else {
-    header("Location: carrito.php");
+    if (isset($_SESSION['carrito_sesion'])) {
+        unset($_SESSION['carrito_sesion']);
+    }
+    header("Location: index.php");
     exit();
 }
 
