@@ -347,23 +347,3 @@ main h2{
     align-items: flex-end;
 }
 
-
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-    .texto_contenedor_footer{
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1rem;  
-    }
-    .texto_contenedor_footer{
-        font-size: 1rem;
-    }
-}

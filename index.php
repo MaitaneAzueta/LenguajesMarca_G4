@@ -50,9 +50,16 @@ $resultado = $conexion->query($sql);
                 <?php
                 $idPeliAnt = null;
                 if ($resultado && $resultado->num_rows > 0) {
+                    echo '<div class="contenedor_peliculas">';
+
                     while($peli = $resultado->fetch_assoc()) {
-                    if ($peli['IDPelicula'] !== $idPeliAnt) {
-                        if ($idPeliAnt !== null) echo "</div></div>";
+                        if ($peli['IDPelicula'] !== $idPeliAnt) {
+                            // NUEVA PELICULA
+
+                            if ($idPeliAnt !== null) {
+                                // Cierro el div de sesiones y luego el div de sesiones_peliculas
+                                echo "</div>";
+                            } 
 
                             $h = floor($peli['Duracion'] / 60);
                             $m = $peli['Duracion'] % 60;
@@ -64,48 +71,47 @@ $resultado = $conexion->query($sql);
                             } else {
                                 $tiempo = "$m min";
                             }
-                ?>
-                <div class="contenedor_peliculas">
-                    <div class="detalle_pelicula">
-                        <div class="imagenes_texto_pelicula">
-                            <img src="<?= $peli['Portada'] ?>" alt="Portada" />
-                        </div>
+                            
+                            $idPeliAnt = $peli['IDPelicula'];
+                            
+                            echo 
+                            '<div class="detalle_pelicula">
+                                    <div class="imagenes_texto_pelicula">
+                                        <img src="' . $peli['Portada'] . '" alt="Portada" />
+                                    </div>
 
-                    <div class="contenedor_pelicula">
-                        <h3><?= $peli['NomPelicula'] ?></h3>
-                        <p class="texto_descripcion"><strong>Descripcion:</strong> <?= $peli['DesPelicula'] ?></p>
-                            <div class="duracion_genero">
-                                <p><strong>Género:</strong> <?= $peli['NomGenero'] ?> </p>
-                                <p><strong>Duración:</strong> <?= $tiempo ?></p>
-                            </div>
-                    </div>
+                                    <div class="contenedor_pelicula">
+                                        <h3>' . $peli['NomPelicula'] . '</h3>
+                                        <p class="texto_descripcion"><strong>Descripcion:</strong> ' . $peli['DesPelicula'] . '</p>
+                                        <div class="duracion_genero">
+                                            <p><strong>Género:</strong> ' . $peli['NomGenero'] . '</p>
+                                            <p><strong>Duración:</strong> ' . $tiempo . '</p>
+                                        </div>
+                                    </div>
+                            </div>';
 
-                <div class="sesiones_peliculas"> 
-                <?php 
-                } 
-                    $idPeliAnt = $peli['IDPelicula'];
-                ?>
-            
-                <div class="salas"> 
-                    <h4><strong><?= $peli['NomSala'] ?></strong></h4>
-                    <p>Fecha de Inicio: <?= $peli['FecHoraIni'] ?></p>
-                    <p>Fecha de Fin: <?= $peli['FecHoraFin'] ?></p>
-                    <p class="precio">Precio: <?= $peli['Precio'] ?>€</p>
-                    <p>Entradas: <span id="stock<?= $peli['IDSesion'] ?>"><?= $peli['Aforo'] ?></span></p>
-                    <?php if ($peli['Aforo'] > 0) { ?>
-                        <button type="button" onclick="comprarUna(<?= $peli['IDSesion'] ?>)">Comprar</button>
-                    <?php } ?>
-                </div>
-                
-                <?php }
-                 
-                } else {
-                    echo "<p> No hay peliculas disponibles </p>";
+                            echo '<div class="sesiones_peliculas">';  // ojo con este cierre
+
+                        }
+
+                        $idPeliAnt = $peli['IDPelicula'];
+                        echo 
+                            '<a><div class="salas"> 
+                                <h4><strong>' . $peli['NomSala'] . '</strong></h4>
+                                <p>Fecha de Inicio: ' . $peli['FecHoraIni'] . '</p>
+                                <p>Fecha de Fin: ' . $peli['FecHoraFin'] . '</p>
+                                <p class="precio">Precio: ' .  $peli['Precio'] . '€</p>
+                                <p>Entradas: <span id="stock' . $peli['IDSesion'] . '">' . $peli['Aforo'] . '</span></p>';
+                        if ($peli['Aforo'] > 0) { 
+                            echo ' <button type="button" onclick="comprarUna(' . $peli['IDSesion'] . ')">Comprar</button>';
+                        }
+                        echo '</div></a>  <!-- cierre de las salas -->';
+                    }
                 }
+                echo '</div> <!-- Cierro el contenedor de peliculas -->';
             $conexion->close();
             ?> 
-                </div>
-                </div>
+                </div> <!-- Sesiones peliculas -->
             </main>
 
         <footer>
