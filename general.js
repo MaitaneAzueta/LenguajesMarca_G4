@@ -9,15 +9,22 @@ window.onload = function() {
     });
 };
 
+window.onload = function() {
+    const enlacesLogin = document.querySelectorAll('.carrito-login');
+
+    enlacesLogin.forEach(function(enlace) {
+        enlace.addEventListener('click', function(event) {
+            alert("Necesitas iniciar sesión para acceder a esta sección.");
+            
+        });
+    });
+};
+
 function verificar() {
     if (window.location.search.includes("errorea=1")) {
         alert("Usuario o contraseña incorrectos");
         window.history.replaceState({}, '', window.location.pathname);
     }
-}
-
-function carrito() {
-    alert("Producto añadido al carrito");
 }
 
 function comprarUna(idSesion) {
