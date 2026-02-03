@@ -105,7 +105,7 @@ $resultado = $conexion->query($sql);
                         if ($peli['Aforo'] > 0) { 
                             echo ' <button type="button" onclick="comprarUna(' . $peli['IDSesion'] . ')">Comprar</button>';
                         }
-                        echo '</div></a>  <!-- cierre de las salas -->';
+                        echo '</div></a>'; //cierre de las salas
                     }
                 }
                 echo '</div> <!-- Cierro el contenedor de peliculas -->';
@@ -113,19 +113,21 @@ $resultado = $conexion->query($sql);
             ?> 
                 </div> <!-- Sesiones peliculas -->
             </main>
-
         <footer>
+<!--Contenedor principal del footer, imagen, derechos reservados y redes sociales-->
             <div class="contenedor_footer">
                 <img class="creative_commons" src="footer/cc.png" alt="CC"/>
+<!--Contenedor que almacena el texto del footer-->
                 <div class="texto_contenedor_footer">
                     <p>© 2026 Elorrieta Cines — Todos los derechos reservados</p>
-                </div>
+                </div> <!--Cierre del contenedor del texto del footer-->
+<!--Contenedor que almacena los logos de las imagenes de las redes sociales-->
                 <div class="imagenes_contenedor_footer">
                     <a href="https://facebook.com"><img class="imagenes_redessociales" src="footer/facebook.png" alt="FB"/></a>
                     <a href="https://instagram.com"><img class="imagenes_redessociales" src="footer/instagram.png" alt="IG"/></a>
                     <a href="https://x.com"><img class="imagenes_redessociales" src="footer/twitter.png" alt="X"/></a>
-                </div>
-            </div>
+                </div> <!--Cierre del contenedor de las imagenes de las redes sociales-->
+            </div> <!--Cierre del contenedor principal del footer-->
         </footer>
         </body>
     </html>

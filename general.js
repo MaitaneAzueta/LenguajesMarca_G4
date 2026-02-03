@@ -1,58 +1,23 @@
-window.onload = function() {
-    const enlacesLogin = document.querySelectorAll('.enlace-login');
-
-    enlacesLogin.forEach(function(enlace) {
-        enlace.addEventListener('click', function(event) {
-            alert("Necesitas iniciar sesión para acceder a esta sección.");
-            
-        });
-    });
-};
-
-window.onload = function() {
-    const enlacesLogin = document.querySelectorAll('.carrito-login');
-
-    enlacesLogin.forEach(function(enlace) {
-        enlace.addEventListener('click', function(event) {
-            alert("Necesitas iniciar sesión para acceder a esta sección.");
-            
-        });
-    });
-};
-
-function verificar() {
-    if (window.location.search.includes("errorea=1")) {
-        alert("Usuario o contraseña incorrectos");
-        window.history.replaceState({}, '', window.location.pathname);
-    }
+// 1. Mensaje de error si la contraseña está mal (se ejecuta al cargar)
+if (window.location.search.includes("errorea=1")) {
+    alert("Usuario o contraseña incorrectos");
 }
 
-function comprarUna(idSesion) {
-    console.log("Enviando ID:", idSesion);
-    if (idSesion && idSesion !== 0) {
-        window.location.href = `comprar.php?id=${idSesion}`;
+// 2. Función para los enlaces que requieren login
+function avisarLogin() {
+    alert("Necesitas iniciar sesión para acceder a esta sección.");
+}
+
+// 3. Función para ir a la página de compra
+function comprarUna(id) {
+    if (id > 0) {
+        window.location.href = "comprar.php?id=" + id;
     } else {
-        alert("Error: No se ha detectado un ID de sesión válido.");
+        alert("ID de sesión no válido.");
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    verificar();
-
-    const formularioCompra = document.querySelector('form[action="finalizar_compra.php"]');
-    
-    if (formularioCompra) {
-        formularioCompra.addEventListener('submit', function(event) {
-
-            const boton = document.activeElement;
-
-            if (boton && boton.value === 'confirmar') {
-                const respuesta = confirm("¿Está seguro de que quiere realizar la compra?");
-                if (!respuesta) {
-                    event.preventDefault();
-                }
-            }
-
-        });
-    }
-});
+// 4. Función de confirmación para el formulario
+function confirmar() {
+    return confirm("¿Está seguro de que quiere realizar la compra?");
+}
