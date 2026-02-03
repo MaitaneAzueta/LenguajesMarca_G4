@@ -6,7 +6,6 @@ if ($conexion->connect_error) die("Fallo: " . $conexion->connect_error);
 
 $mensaje = $_SESSION['mensaje'] ?? '';
 unset($_SESSION['mensaje']);
-
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +13,9 @@ unset($_SESSION['mensaje']);
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Login</title>
-            <link rel="stylesheet" href="styles.css" />
-            <script src="general.js" defer></script>
+            <link rel="stylesheet" href="styles.css">
+            <script src="general.js"></script>
+            <title>Cine Elorrieta-Errekamari</title>
         </head>
         <body>
             <header>
@@ -36,28 +35,38 @@ unset($_SESSION['mensaje']);
                     </div>
                 </nav>
             </header>
-                <main class="contenedor_mensaje">
-                    <div class="mensaje-principal">
+            <main class="contenedor_mensaje">
+                <?php
+                echo '
+                <div class="mensaje-principal">
                     <h2 class="mensaje-titulo"> Login</h2>
-                    <form id ="login" method="post" action="login2_0.php">
+                    <form id="login" method="post" action="login2_0.php">
                         <label for="usuario"> Nombre de usuario: </label> <br/>
                         <input type="text" name="usuario" id="usuario" required> <br/><br/>
                         <label for="clave"> Clave: </label> <br/>
                         <input type="password" name="clave" id="clave" required/><br/> <br/>
-                        <input  class="texto-boton" type="submit" value="Entrar"/>
+                        <input class="texto-boton" type="submit" value="Entrar"/>
                     </form>
-                </div>
+                </div>';
+                
+                if ($mensaje !== '') {
+                    echo '<p style="color:red; text-align:center;">' . $mensaje . '</p>';
+                }
+
+                $conexion->close();
+                ?> 
             </main>
+
         <footer>
             <div class="contenedor_footer">
-                <img class="creative_commons" src="footer/cc.png" alt="Imagen de Creative Commons"/>
+                <img class="creative_commons" src="footer/cc.png" alt="CC"/>
                 <div class="texto_contenedor_footer">
                     <p>© 2026 Elorrieta Cines — Todos los derechos reservados</p>
                 </div>
                 <div class="imagenes_contenedor_footer">
-                    <a href="https://www.facebook.com/"><img class="imagenes_redessociales"src="footer/facebook.png" alt="Imagen del icono de facebook"/></a>
-                    <a href="https://www.instagram.com/"><img class="imagenes_redessociales" src="footer/instagram.png" alt="Imagen del icono de instagram"/></a>
-                    <a href="https://www.x.com/"><img class="imagenes_redessociales" src="footer/twitter.png" alt="Imagen del icono de twitter"/></a>
+                    <a href="https://facebook.com"><img class="imagenes_redessociales" src="footer/facebook.png" alt="FB"/></a>
+                    <a href="https://instagram.com"><img class="imagenes_redessociales" src="footer/instagram.png" alt="IG"/></a>
+                    <a href="https://x.com"><img class="imagenes_redessociales" src="footer/twitter.png" alt="X"/></a>
                 </div>
             </div>
         </footer>

@@ -54,44 +54,33 @@ if (isset($_SESSION['carrito_sesion'])) {
                 <h2>Resumen de la compra</h2>
                 <?php
                 if (!$datosCompra) {
-                    echo '<div class="contenedor_peliculas">
-                            <p>El carrito está vacío.</p>
-                            <a href="index.php">Volver a la cartelera</a>
-                          </div>';
+                    echo '
+                    <section class="carrito-vacio">
+                        <p>El carrito está vacío.</p>
+                        <a href="index.php">Volver a la cartelera</a>
+                    </section>';
                 } else {
-                    echo '<div class="contenedor_peliculas">';
-
-                    echo 
-                    '<div class="detalle_pelicula">
-                            <div class="imagenes_texto_pelicula">
-                                <img src="' . $datosCompra['Portada'] . '" alt="Portada" />
-                            </div>
-
-                            <div class="contenedor_pelicula">
-                                <h3>' . $datosCompra['NomPelicula'] . '</h3>
+                    echo '
+                    <section>
+                        <div class="detalle-carrito">
+                            <img src="' . htmlspecialchars($datosCompra['Portada']) . '" alt="Portada" style="width:200px;"/>
+                            
+                            <div class="info-ticket">
+                                <p><strong>Usuario:</strong> ' . (isset($_SESSION['cliente']) ? $_SESSION['cliente'] : 'Invitado') . '</p>
+                                <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
+                                <p><strong>Película:</strong> ' . $datosCompra['NomPelicula'] . '</p>
                                 <p><strong>Sala:</strong> ' . $datosCompra['NomSala'] . '</p>
-                                <div class="duracion_genero">
-                                    <p><strong>Inicio:</strong> ' . $datosCompra['FecHoraIni'] . '</p>
-                                    <p><strong>Fin:</strong> ' . $datosCompra['FecHoraFin'] . '</p>
-                                </div>
+                                <p><strong>Fecha y Hora Inicio:</strong> ' . $datosCompra['FecHoraIni'] . '</p>
+                                <p><strong>Fecha y Hora Fin:</strong> ' . $datosCompra['FecHoraFin'] . '</p>
+                                <p><strong>Precio:</strong> €' . number_format($datosCompra['Precio'], 2) . '</p>
                             </div>
-                    </div>';
 
-                    echo '<div class="sesiones_peliculas">';
-                    
-                    echo 
-                        '<a><div class="salas"> 
-                                <h4><strong>Ticket Detalle</strong></h4>
-                                <p>Usuario: ' . (isset($_SESSION['cliente']) ? $_SESSION['cliente'] : 'Invitado') . '</p>
-                                <p class="precio">Total: ' .  $datosCompra['Precio'] . '€</p>
-                                <form action="finalizar_compra.php" method="POST">
-                                    <button type="submit" name="accion" value="confirmar">Confirmar</button>
-                                    <button type="submit" name="accion" value="cancelar">Cancelar</button>
-                                </form>
-                        </div></a> ';
-                    
-                    echo '</div> ';
-                    echo '</div> ';
+                            <form action="finalizar_compra.php" method="POST">
+                                <button type="submit" name="accion" value="confirmar">Confirmar</button>
+                                <button type="submit" name="accion" value="cancelar">Cancelar</button>
+                            </form>
+                        </div>
+                    </section>';
                 }
                 $conexion->close();
                 ?> 
