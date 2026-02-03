@@ -90,7 +90,7 @@ if (isset($_SESSION['carrito_sesion'])) {
                 </section>'; // Cierre del section carrito-vacio
 // Si hay datos, imprimimos el ticket de compra y se habre otro section para almacenar los datos del carrito con contenido
             } else {  
-                echo '<section>' .
+                echo 
 // Inicio del contenedor principal de carrito.php, detalle-carrito
                     '<div class="detalle-carrito">
                         <img src="' . htmlspecialchars($datosCompra['Portada']) . '" alt="Portada" />' .
@@ -103,14 +103,15 @@ if (isset($_SESSION['carrito_sesion'])) {
                             <p><strong>Fecha y Hora Inicio:</strong> ' . $datosCompra['FecHoraIni'] . '</p>
                             <p><strong>Fecha y Hora Fin:</strong> ' . $datosCompra['FecHoraFin'] . '</p>
                             <p><strong>Precio:</strong> €' . number_format($datosCompra['Precio'], 2) . '</p>
-                            </div>' . // Cieerre del contenedor info-ticket
+                        </div>' . // Cierre del contenedor info-ticket
+                    
 // Formulario para confirmar o cancelar la compra
                             '<form action="finalizar_compra.php" onsubmit="return confirmar();" method="POST">
                                 <button type="submit" name="accion" value="confirmar">Confirmar</button>
                                 <button type="submit" name="accion" value="cancelar">Cancelar</button>
                             </form>
-                        </div>' . // Cierre del contenedor detalle-carrito
-                    '</section>'; // Cierre del section carrito con contenido
+                    </div>'  // Cierre del contenedor detalle-carrito
+                    ; 
             }
             
 // Cerramos la conexión a la base de datos para liberar recursos

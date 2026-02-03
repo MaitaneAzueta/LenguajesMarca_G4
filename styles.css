@@ -4,7 +4,7 @@ body{
     background-color: #cca37d;
 }
 
-/*Estilos para el header*/
+/*================================Estilos para el header==============================*/
 
 /*Contenedor del logo y usuario*/
 header {
@@ -139,7 +139,7 @@ input[type="submit"] {
     background-color: rgb(240, 236, 236);
 }
 
-/* Botón de entrada*/
+/* Estilo para el texto de botón de entrada*/
 .texto-boton {
     color: rgb(14, 13, 13);
 }
@@ -160,7 +160,7 @@ input[type="submit"] {
 /*Estilo para la imagen del footer creative commons*/
 .creative_commons {
     width: 100%;
-    max-width: 20%;
+    max-width: 10%;
     order: 1;
 }
 
@@ -191,6 +191,7 @@ input[type="submit"] {
 
 /*================Estilos para index.html===========================*/
 
+/*Estilo para que lo de dentro de main se vea en columna*/
 main{
     display: flex;
     flex-direction: column;
@@ -199,6 +200,7 @@ main{
     align-content: flex-start;  
 }
 
+/* Estilo para titulo h2*/
 main h2{
     width: 100%;
     min-width: 100px;
@@ -207,6 +209,7 @@ main h2{
     margin-top: 30px;
 }
 
+/**/
 .contenedor_peliculas {
     display: flex;
     flex-direction: row;
@@ -304,9 +307,11 @@ main h2{
 }
 
 /*======================Estilos para carrito.php=====================*/
+
 .carrito-vacio{
     width: 100%;
     text-align: center;
+    margin-bottom: 10rem;
 }
 
 
@@ -320,7 +325,6 @@ main h2{
     background-color: #e7ba8f;
     margin: 5%;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
-    align-self: flex-end;
     flex-wrap: wrap;
 }
 
@@ -341,9 +345,17 @@ main h2{
 }
 
 
-.detalle-carrito button{
-    align-self: center;
-    margin-left: 2rem;
-    align-items: flex-end;
+.detalle-carrito form{
+    display: flex;
+    margin-left: 60%;
+    margin-top: 1rem;
+    align-self: flex-end;
+    text-align: center;
+
 }
+
+
+.detalle-carrito button{
+    margin-left: 1rem;
+ }
 
