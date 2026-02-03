@@ -16,22 +16,22 @@ $datosCompra = null;
 // Comprueba si hay alguna sesión de carrito activa, en ese usuario
 if (isset($_SESSION['carrito_sesion'])) {
     
-// Guardar el ID de la sesión en una variable
+    // Guardar el ID de la sesión en una variable
     $idSesion = $_SESSION['carrito_sesion'];
     
-//Preparar la consulta SQL (Query):
+    //Preparar la consulta SQL (Query):
     $sql = "SELECT p.NomPelicula, ses.Precio, s.NomSala, ses.FecHoraIni, ses.FecHoraFin, p.Portada
             FROM sesion ses
             INNER JOIN pelicula p ON p.IDPelicula = ses.IDPelicula
             INNER JOIN sala s ON ses.IDSala = s.IDSala
             WHERE ses.IDSesion = $idSesion";
 
-// Ejecutar la consulta en la base de datos
+    // Ejecutar la consulta en la base de datos
     $resultado = $conexion->query($sql);
 
-// Comprobar si la consulta se ejecuto y si devolvió al menos una fila (registro)
+    // Comprobar si la consulta se ejecuto y si devolvió al menos una fila (registro)
     if ($resultado && $resultado->num_rows > 0) {
-// Extraer los datos del resultado y guardarlos en un array
+        // Extraer los datos del resultado y guardarlos en un array
         $datosCompra = $resultado->fetch_assoc();
     }
 }
@@ -52,16 +52,12 @@ if (isset($_SESSION['carrito_sesion'])) {
             <div class="contenedor_logo">
                 <a href="index.php"><img class="logotipo" src="header/image_logo.png" alt="Logotipo" /></a>
                 <h1>CINE ELORRIETA</h1>
-                
                 <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
-
                 <div class="saludo_usuario">
                     <?php if(isset($_SESSION['cliente'])) echo "Hola " . htmlspecialchars($_SESSION['cliente']); ?>
                 </div> 
-
                 <a href="login.php"><img class="usuario" src="header/personita.png" alt="Usuario"/></a>
             </div> 
-
             <nav>
                 <div class="contenedor_menu">
                     <a href="index.php"> Películas</a>
@@ -69,12 +65,10 @@ if (isset($_SESSION['carrito_sesion'])) {
                 </div>
             </nav>
         </header>
-
         <main>
             <h2>Resumen de la compra</h2>
-            
             <?php
-// Si no hay datos de compra, mostramos aviso de carrito vacío
+            // Si no hay datos de compra, mostramos aviso de carrito vacío
             if (!$datosCompra) {
                 echo
 // Se abre un section para almacenar los datos del carrito vacío
@@ -82,28 +76,28 @@ if (isset($_SESSION['carrito_sesion'])) {
                     <p>El carrito está vacío.</p>
                     <a href="index.php">Volver a la cartelera</a>
                 </section>'; // Cierre del section carrito-vacio
-            } else {
 // Si hay datos, imprimimos el ticket de compra y se habre otro section para almacenar los datos del carrito con contenido
-                echo '<section>'
-// Inicio del contenedor principal de carrito.php, detalle-carrito
-                        '<div class="detalle-carrito">
-                            <img src="' . htmlspecialchars($datosCompra['Portada']) . '" alt="Portada" style="width:200px;"/>'
-// Contenedor de la informacion almacenada de la sesion seleccionada, info-ticket
-                            '<div class="info-ticket">
-                                <p><strong>Usuario:</strong> ' . (isset($_SESSION['cliente']) ? htmlspecialchars($_SESSION['cliente']) : 'Invitado') . '</p>
-                                <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
-                                <p><strong>Película:</strong> ' . $datosCompra['NomPelicula'] . '</p>
-                                <p><strong>Sala:</strong> ' . $datosCompra['NomSala'] . '</p>
-                                <p><strong>Fecha y Hora Inicio:</strong> ' . $datosCompra['FecHoraIni'] . '</p>
-                                <p><strong>Fecha y Hora Fin:</strong> ' . $datosCompra['FecHoraFin'] . '</p>
-                                <p><strong>Precio:</strong> €' . number_format($datosCompra['Precio'], 2) . '</p>
-                            </div>' // Cieerre del contenedor info-ticket
-// Formulario para confirmar o cancelar la compra
+            } else {  
+                echo '<section>' .
+                // Inicio del contenedor principal de carrito.php, detalle-carrito
+                    '<div class="detalle-carrito">
+                        <img src="' . htmlspecialchars($datosCompra['Portada']) . '" alt="Portada" />' .
+                // Contenedor de la informacion almacenada de la sesion seleccionada, info-ticket
+                        '<div class="info-ticket">
+                            <p><strong>Usuario:</strong> ' . htmlspecialchars($_SESSION['cliente']) . '</p>
+                            <p><strong>Cine:</strong> Cine Elorrieta-Errekamari</p>
+                            <p><strong>Película:</strong> ' . ($datosCompra['NomPelicula']) . '</p>
+                            <p><strong>Sala:</strong> ' . ($datosCompra['NomSala']) . '</p>
+                            <p><strong>Fecha y Hora Inicio:</strong> ' . $datosCompra['FecHoraIni'] . '</p>
+                            <p><strong>Fecha y Hora Fin:</strong> ' . $datosCompra['FecHoraFin'] . '</p>
+                            <p><strong>Precio:</strong> €' . number_format($datosCompra['Precio'], 2) . '</p>
+                            </div>' . // Cieerre del contenedor info-ticket
+                // Formulario para confirmar o cancelar la compra
                             '<form action="finalizar_compra.php" onsubmit="return confirmar();" method="POST">
                                 <button type="submit" name="accion" value="confirmar">Confirmar</button>
                                 <button type="submit" name="accion" value="cancelar">Cancelar</button>
                             </form>
-                        </div>' // Cierre del contenedor detalle-carrito
+                        </div>' . // Cierre del contenedor detalle-carrito
                     '</section>'; // Cierre del section carrito con contenido
             }
             
@@ -112,20 +106,17 @@ if (isset($_SESSION['carrito_sesion'])) {
             ?> 
         </main>
         <footer>
-<!--Contenedor principal del footer, imagen, derechos reservados y redes sociales-->
             <div class="contenedor_footer">
                 <img class="creative_commons" src="footer/cc.png" alt="CC"/>
-<!--Contenedor que almacena el texto del footer-->
                 <div class="texto_contenedor_footer">
                     <p>© 2026 Elorrieta Cines — Todos los derechos reservados</p>
-                </div> <!--Cierre del contenedor del texto del footer-->
-<!--Contenedor que almacena los logos de las imagenes de las redes sociales-->
+                </div>
                 <div class="imagenes_contenedor_footer">
                     <a href="https://facebook.com"><img class="imagenes_redessociales" src="footer/facebook.png" alt="FB"/></a>
                     <a href="https://instagram.com"><img class="imagenes_redessociales" src="footer/instagram.png" alt="IG"/></a>
                     <a href="https://x.com"><img class="imagenes_redessociales" src="footer/twitter.png" alt="X"/></a>
-                </div> <!--Cierre del contenedor de las imagenes de las redes sociales-->
-            </div> <!--Cierre del contenedor principal del footer-->
+                </div> 
+            </div> 
         </footer>
         </body>
     </html>
