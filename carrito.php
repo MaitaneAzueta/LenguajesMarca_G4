@@ -106,8 +106,8 @@ if (isset($_SESSION['carrito_sesion'])) {
                         </div>' . // Cierre del contenedor info-ticket
                     
 // Formulario para confirmar o cancelar la compra
-                            '<form action="finalizar_compra.php" onsubmit="return confirmar();" method="POST">
-                                <button type="submit" name="accion" value="confirmar">Confirmar</button>
+                            '<form action="finalizar_compra.php" method="POST">
+                                <button type="submit" name="accion" value="confirmar" onclick="confirmar();">Confirmar</button>
                                 <button type="submit" name="accion" value="cancelar">Cancelar</button>
                             </form>
                     </div>'  // Cierre del contenedor detalle-carrito
