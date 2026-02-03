@@ -1,11 +1,20 @@
 <?php
+// Iniciar una sesion de usuario para almacenar los datos.
 session_start();
-$conexion = new mysqli("localhost:3359", "root", "", "reto2_g4");
 
-if ($conexion->connect_error) die("Fallo: " . $conexion->connect_error);
+// Establecer conexión con la base de datos MySQL (host:puerto, usuario, contraseña, nombre_bd)
+$servername = "localhost:3359";
+$username = "root";
+$password = "";
+$dbname = "reto2_g4";
 
-$mensaje = $_SESSION['mensaje'] ?? '';
-unset($_SESSION['mensaje']);
+// Crear la conexión con MySQL
+$conexion = new mysqli($servername, $username, $password, $dbname);
+
+// Comprobar si la conexión falló y detener la ejecución en caso de error
+if ($conexion->connect_error) {
+    die("Fallo: " . $conexion->connect_error);
+}
 
 $sql = "SELECT p.IDPelicula, p.NomPelicula, p.Portada, p.Duracion, p.DesPelicula,
                g.NomGenero, s.NomSala, ses.IDSesion, ses.FecHoraIni, ses.FecHoraFin, s.Aforo, ses.Precio
