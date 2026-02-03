@@ -25,3 +25,7 @@ function confirmar() {
 function mensaje_cerrarSesion() {
     return confirm("¿Está seguro de que quiere cerrar sesión?");
 }
+
+function comprarEntrada() {
+    return confirm("¿Está seguro de que quiere comprar esta entrada?");
+}
