@@ -14,30 +14,37 @@ header {
     padding: 1px;
 }
 
+/*Estilos generales para el logo, título y usuario*/
 .contenedor_logo{
     background-color:#cca37d;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     width: 100%;
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
+/*Estilo para que los "a" de contenedor_logo desaparezcan */
 .contenedor_logo a {
     display: flex;       
     width: min-content; 
-    margin-left: auto; 
     padding: 0;
 }
 
-/*Estilo general para el logo*/
-.logotipo {
+/*Estilo general para las imágenes*/
+.contenedor_logo img{
     width: 100%;
-    min-width: 200px;
 }
 
-/*Estilo general para el usuario*/
+/*Estilo para el logo*/
+.logotipo {
+    width: 100%;
+    min-width: 250px;
+}
+
+/*Estilo para el usuario*/
 .usuario {
     width: 100%;
     min-width: 100px;
@@ -46,14 +53,14 @@ header {
 
 /*Estilo general para los h1.*/
 h1 {
-    width: 90%;
+    width: 60%;
     font-family: "Verdana", "Geneva", sans-serif;
     text-align: center;
 }
 
 
 
-/*Estilo general para el contenedor de los menus de navegacion*/
+/*Estilo general para el contenedor de los menús de navegación*/
 .contenedor_menu {
     background-color: #e7ba8f;
     width: 100%;
@@ -62,7 +69,7 @@ h1 {
     justify-content: center;
 }
 
-/*Estilo para los elementos dentro del menu de navegacion y el menu de navegacion */
+/*Estilo para los elementos dentro del menú de navegación y el menú de navegación */
 nav a {
     text-decoration: none;
     font-size: 2rem;
@@ -72,13 +79,13 @@ nav a {
     flex-grow: 1;
     text-align: center;
 }
-
+/*Estilo para que al pasar el cursor cambié el color */
 nav a:hover {
     background-color:#DAB086;
 }
 
 
-/*Estilo general para el menu de navegacion*/
+/*Estilo general para el menú de navegación*/
 nav {
     display: flex;
     width: 100%;
@@ -86,8 +93,8 @@ nav {
 }
 
 
-/*Estilos para login.html*/
-.contenedor_mensaje {
+/*Estilos generales para login.html*/
+.contenedor_main {
     font-family: "Verdana", "Geneva", sans-serif;
     background-color: #facea5;
     display: flex;
@@ -95,34 +102,32 @@ nav {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 1px;
-}
-
- /*Estilo para el título del mensaje*/
-.mensaje-titulo{
-    font-size: 200%;
-    color: rgb(0, 0, 0);
-    margin-top: -50px;
-    margin-bottom: 30px;
 }
 
 
-/* Estilo para el contenedor principal del mensaje */
-.mensaje-principal {
+/* Estilo para el contenedor del login */
+.contenedor_login {
     margin-top: 3rem;
     background-color: #f8e7cd;
-    padding: 60px;
+    padding: 3%;
     border-radius: 12px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
-    min-height: 200px;
     margin-bottom: 3rem;
 }
+ 
+
+/*Estilo para el título del login*/
+.login-titulo{
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+
 
 /* =========== FORMULARIO ==============================================*/
 /* Estilo para los campos que rellenar */
@@ -342,14 +347,13 @@ main h2{
     padding: 1rem;
     border-radius: 12px;
     justify-content: space-evenly; 
-
 }
 
-
 .detalle-carrito form{
+    width: 100%;
     display: flex;
-    margin-left: 60%;
-    margin-top: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 
@@ -357,3 +361,60 @@ main h2{
     margin-left: 1rem;
  }
 
+
+@media print {
+    body {
+        background: white;
+    }
+
+    header, nav, footer {
+        display: none;
+    }
+
+    .detalle-carrito {
+        width: 100%;
+        margin: 0;
+        background: white;
+        box-shadow: none;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .detalle-carrito form, button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .logotipo {
+        width: 10%;
+    }
+
+    .usuario {
+        width: 50%;
+    }
+    h1 {
+      width: 10%;  
+    }
+    .imagenes_texto_pelicula {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .detalle_pelicula {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .salas {
+        width: 90%;
+        min-width: auto;
+    }
+
+    .contenedor_peliculas {
+        margin: 0;
+        padding: 15px;
+    }
+
+}
