@@ -21,3 +21,7 @@ function comprarUna(id) {
 function confirmar() {
     return confirm("¿Está seguro de que quiere realizar la compra?");
 }
+
+function mensaje_cerrarSesion() {
+    return confirm("¿Está seguro de que quiere cerrar sesión?");
+}

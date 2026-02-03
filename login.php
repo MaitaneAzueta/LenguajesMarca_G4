@@ -40,7 +40,7 @@ unset($_SESSION['mensaje']);
                 <div class="contenedor_logo">
                     <a href="index.php"><img class="logotipo" src="header/image_logo.png" alt="Logotipo" /></a>
                     <h1>CINE ELORRIETA</h1>
-                    <a class="cerrar_sesion" href="logout.php">Cerrar Sesion</a>
+                    <a class="cerrar_sesion" href="logout.php" onclick="return mensaje_cerrarSesion();">Cerrar Sesion</a>
 <!--Contenedor para el usuario que inicie sesion-->
                         <div class="saludo_usuario">
 <!--Aparece un mensaje de bienvenida para el usuario-->
