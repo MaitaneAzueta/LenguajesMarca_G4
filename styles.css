@@ -349,6 +349,7 @@ main h2{
 .detalle-carrito img{
     margin-right: 2rem;
     border-radius: 12px;
+    width: 17%;
 }
 
 /*Estilo para la información del ticket*/
@@ -410,6 +411,11 @@ main h2{
     }
     h1 {
         font-size: 1.5rem;
+    }
+
+    .detalle-carrito img{
+        width: 250px;
+        min-width: 250px;
     }
 
     .creative_commons {
