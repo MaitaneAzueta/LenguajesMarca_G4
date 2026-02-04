@@ -215,7 +215,7 @@ main h2{
     margin-top: 30px;
 }
 
-/*Estilo para el contenedor de todas las peliculas*/
+/*Estilo para el contenedor de todas las películas*/
 .contenedor_peliculas {
     display: flex;
     flex-direction: row;
@@ -224,7 +224,7 @@ main h2{
 
 }
 
-/*Estilo para la */
+/*Estilo para la parte de la imagen, del titulo, descripción, género y duración*/
 .detalle_pelicula{
     display: flex;
     flex-direction: row;
