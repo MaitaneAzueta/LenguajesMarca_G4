@@ -29,6 +29,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $_SESSION['cliente'] = $row['Nombre']; // Guardaremos el nombre del usuario para enseñarlo despues
+        $_SESSION['dni'] = $row['DNICliente']; // Guardaremos el DNI del usuario para futuras consultas
     }
     // Si existe en la BBDD iniciara sesion, entrara a menu.php y mostrara el mensaje de arriba
     header("Location: index.php");

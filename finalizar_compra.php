@@ -24,7 +24,8 @@ if ($accion === "confirmar") {
 // Verificar que realmente hay algo seleccionado para comprar
     if (isset($_SESSION['carrito_sesion'])) {
         $idSesion = $_SESSION['carrito_sesion'];
-        $dniCliente = "67856221B"; // DNI de ejemplo, al hacer la compra se almacenara el del usuario
+        //$dniCliente = "67856221B"; // DNI de ejemplo, al hacer la compra se almacenara el del usuario
+        $dniCliente = $_SESSION['dni']; // Recuperar el DNI del cliente desde la sesión
 
 // Insertar el registro principal en la tabla 'compra'
 // Se definen valores por defecto: descuento 0, canal 1 e importe 15.0
