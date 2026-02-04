@@ -94,7 +94,7 @@ $resultado = $conexion->query($sql);
 // Inicio de contenedor de detalle_pelicula (imagen, titulo, descripcion, genero y duracion)
                             '<div class="detalle_pelicula"> ' .
 // Almacena la imagen de la pelicula en un contenedor
-                                    '<div class="imagenes_texto_pelicula">
+                                    '<div class="imagenes_pelicula">
                                         <img src="' . $peli['Portada'] . '" alt="Portada" />
                                     </div>' . //Cierre del contenedor de la imagen de la pelicula
 // Almacena la informacion de la pelicula en un contenedor

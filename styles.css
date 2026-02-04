@@ -41,13 +41,13 @@ header {
 /*Estilo para el logo*/
 .logotipo {
     width: 100%;
-    min-width: 250px;
+    min-width: 13rem;
 }
 
 /*Estilo para el usuario*/
 .usuario {
     width: 100%;
-    min-width: 100px;
+    min-width: 7rem;
 }
 
 
@@ -224,7 +224,7 @@ main h2{
 
 }
 
-/*Estilo para la parte de la imagen, del titulo, descripción, género y duración*/
+/*Estilo para la parte de la imagen, del título, descripción, género y duración*/
 .detalle_pelicula{
     display: flex;
     flex-direction: row;
@@ -232,16 +232,20 @@ main h2{
     justify-content: space-around;
 }
 
-.imagenes_texto_pelicula{
+/*Estilo general para las imágenes*/
+.imagenes_pelicula{
     width: 20rem;
     min-width: 5rem;
 }
-.imagenes_texto_pelicula img{
+
+/*Estilo para las imágenes de la película*/
+.imagenes_pelicula img{
     width: 100%;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
 }
 
+/*Estilo para el contenedor donde está el título, la descripción y género y duración*/
 .contenedor_pelicula{
     background-color: #e7ba8f ;
     padding: 1rem;
@@ -255,20 +259,23 @@ main h2{
     justify-content: space-evenly;
 }
 
+/*Estilo para el título de la película*/
 .contenedor_pelicula h3{
     font-size: 32px;
 }
 
+/*Estilo para la descripción*/
 .texto_descripcion{
     font-size: 17px;
     line-height: 1.5;
 }
 
+/*Estilo para la duración y el género*/
 .duracion_genero{
     margin-top: 5px;
 }
 
-/* ahora las sesiones */
+/*Ahora estilo general para las sesiones*/
 .sesiones_peliculas{
     display: flex;
     flex-direction: row;
@@ -276,12 +283,13 @@ main h2{
     justify-content: space-evenly;
 }
 
+/*Estilo para que el enlace de sesiones no se vea*/
 .sesiones_peliculas a{
     text-decoration: none;
     color: black;
 }
 
-
+/*Estilo para cada una de las salas*/
 .salas{
     background-color: #f8e0bc;
     padding: 18px;
@@ -307,7 +315,7 @@ main h2{
     margin: 1rem;
 }
 
-
+/*Estilo para el texto de cerrar sesión*/
 .cerrar_sesion{
     color: #000000;
     margin-left: 1rem;
@@ -315,13 +323,15 @@ main h2{
 
 /*======================Estilos para carrito.php=====================*/
 
+
+/*Estilo para la página del carrito vacío*/
 .carrito-vacio{
     width: 100%;
     text-align: center;
     margin-bottom: 30rem;
 }
 
-
+/*Estilo para el contenedor del resumen de la compra*/
 .detalle-carrito{
     display: flex;
     flex-direction: row;
@@ -335,13 +345,13 @@ main h2{
     flex-wrap: wrap;
 }
 
-
+/*Estilo para la imagen del carrito*/
 .detalle-carrito img{
     margin-right: 2rem;
     border-radius: 12px;
 }
 
-
+/*Estilo para la información del ticket*/
 .info-ticket{
     display: flex;
     flex-direction: column;
@@ -350,6 +360,7 @@ main h2{
     justify-content: space-evenly; 
 }
 
+/*Estilo general para los botones del carrito*/
 .detalle-carrito form{
     width: 100%;
     display: flex;
@@ -357,12 +368,12 @@ main h2{
     margin-top: 2rem;
 }
 
-
+/*Estilo para el espacio de los botones*/
 .detalle-carrito button{
     margin-left: 1rem;
  }
 
-
+/*Estilo para que a la hora de imprimir el ticket no aparezca el header ni footer*/
 @media print {
     body {
         background: white;
@@ -386,36 +397,27 @@ main h2{
     }
 }
 
-@media (max-width: 768px) {
+/*Estilo para que se vea bien en pantallas pequeñas*/
+@media screen and (max-width: 768px) {
 
-    .logotipo {
-        width: 10%;
+    .logotipo{
+        width: 100px;
+        min-width: 100px;
     }
-
-    .usuario {
-        width: 50%;
+    .usuario{
+        width: 50px;
+        min-width: 50px;
     }
     h1 {
-      width: 10%;  
-    }
-    .imagenes_texto_pelicula {
-        width: 100%;
-        margin-right: 0;
+        font-size: 1.5rem;
     }
 
-    .detalle_pelicula {
-        flex-direction: column;
-        align-items: center;
+    .creative_commons {
+        width: 100px;
+        min-width: 100px;
     }
-
-    .salas {
-        width: 90%;
-        min-width: auto;
-    }
-
-    .contenedor_peliculas {
-        margin: 0;
-        padding: 15px;
+    .texto_contenedor_footer {
+        font-size: 1rem;
     }
 
 }
