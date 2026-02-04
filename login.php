@@ -56,11 +56,11 @@ unset($_SESSION['mensaje']);
                     </div> <!--Se cierra el div de contenedor_menu-->
                 </nav>
             </header>
-            <main class="contenedor_mensaje">
+            <main class="contenedor_main">
                 <?php
 // El contenedor principal del login, con el titulo y el formulario
-                echo '<div class="mensaje-principal">
-                    <h2 class="mensaje-titulo"> Login</h2>
+                echo '<div class="contenedor_login">
+                    <h2 class="login-titulo"> Login</h2>
                     <form id="login" method="post" action="login2_0.php">
                         <label for="usuario"> Nombre de usuario: </label> <br/>
                         <input type="text" name="usuario" id="usuario" required> <br/><br/>
