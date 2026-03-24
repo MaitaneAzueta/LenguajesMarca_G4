@@ -1,429 +1,358 @@
+/* PALETA ESTRICTA: #000 (Negro), #FF0000 (Rojo), #0000FF (Azul) */
 
-/*Estilo general para toda la página*/
-body{
-    background-color: #cca37d;
+.footer-derecha { 
+    display: flex; 
+    flex-direction: row; /* Esto los pone en fila */
+    gap: 15px;           /* Espacio entre cada logo */
+    align-items: center; 
 }
 
-/*================================Estilos para el header==============================*/
-
-/*Contenedor del logo y usuario*/
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1px;
+/* Efecto gris al pasar el cursor sobre la imagen */
+.icono-social img {
+    width: 30px; 
+    height: auto;
+    transition: filter 0.3s ease;
 }
 
-/*Estilos generales para el logo, título y usuario*/
-.contenedor_logo{
-    background-color:#cca37d;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-/*Estilo para que los "a" de contenedor_logo desaparezcan */
-.contenedor_logo a {
-    display: flex;       
-    width: min-content; 
-    padding: 0;
-}
-
-/*Estilo general para las imágenes*/
-.contenedor_logo img{
-    width: 100%;
-}
-
-/*Estilo para el logo*/
-.logotipo {
-    width: 100%;
-    min-width: 13rem;
-}
-
-/*Estilo para el usuario*/
-.usuario {
-    width: 100%;
-    min-width: 7rem;
-}
-
-
-/*Estilo general para los h1.*/
-h1 {
-    width: 60%;
-    font-family: "Verdana", "Geneva", sans-serif;
-    text-align: center;
-}
-
-
-
-/*Estilo general para el contenedor de los menús de navegación*/
-.contenedor_menu {
-    background-color: #e7ba8f;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-/*Estilo para los elementos dentro del menú de navegación y el menú de navegación */
-nav a {
-    text-decoration: none;
-    font-size: 2rem;
-    color: #000;
-    padding: 20px;
-    border: 1px solid #cca37d;
-    flex-grow: 1;
-    text-align: center;
-}
-/*Estilo para que al pasar el cursor cambié el color */
-nav a:hover {
-    background-color:#DAB086;
-}
-
-
-/*Estilo general para el menú de navegación*/
-nav {
-    display: flex;
-    width: 100%;
-    border: 1px solid #cca37d;
-}
-
-
-/*Estilos generales para login.html*/
-.contenedor_main {
-    font-family: "Verdana", "Geneva", sans-serif;
-    background-color: #facea5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-
-/* Estilo para el contenedor del login */
-.contenedor_login {
-    margin-top: 3rem;
-    background-color: #f8e7cd;
-    padding: 3%;
-    border-radius: 12px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 3rem;
-}
- 
-
-/*Estilo para el título del login*/
-.login-titulo{
-    font-size: 2rem;
-    color: rgb(0, 0, 0);
-    margin-top: -10px;
-}
-
-
-
-/* =========== FORMULARIO ==============================================*/
-/* Estilo para los campos que rellenar */
-input {
-    padding: 10px 30px;
-    font-size: 18px;
-    background-color: #f7f7f7;
-    color: rgb(17, 17, 17);
-    border-radius: 5px;
-}
-
-/* Estilo para el botón de entrada */
-input[type="submit"] {
-    background-color: rgb(240, 236, 236);
-}
-
-/* Estilo para el texto de botón de entrada*/
-.texto-boton {
-    color: rgb(14, 13, 13);
-}
-
-
-
-/* =================== Estilo para el FOOTER =====================*/
-
-/*Estilos para el contenedor del footer*/
-.contenedor_footer{
-    background-color: #cca37d;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1rem;
-}
-
-/*Estilo para la imagen del footer creative commons*/
-.creative_commons {
-    width: 100%;
-    max-width: 10%;
-    order: 1;
-}
-
-/*Estilo para el contenedor del texto del footer*/
-.texto_contenedor_footer {
-    text-align: center;
-    font-size: 25px;
-    order: 2;
-}
-
-/*Estilo para el contenedor de las imagenes de las redes sociales del footer*/
-.imagenes_contenedor_footer {
-    text-align: center;
-    order: 3;
-}
-
-/*Estilo para las imagenes redes sociales*/
-.imagenes_redessociales {
-    width: 30%;
-    max-width: 80px;
-}
-
-/*Estilo para que las imagenes redes sociales cambien de color*/
-.imagenes_redessociales:hover {
+.icono-social:hover img {
     filter: grayscale(100%);
 }
 
-
-/*================Estilos para index.html===========================*/
-
-/*Estilo para que lo de dentro de main se vea en columna*/
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #facea5;
-    align-content: flex-start;  
+.logo-hispania {
+    width: 15%;
+    height: 15%;
 }
 
-/* Estilo para titulo h2*/
-main h2{
-    width: 100%;
-    min-width: 100px;
-    font-size: 30px;
+* { box-sizing: border-box; margin: 0; padding: 0; cursor: crosshair; }
+
+body {
+    background-color: #000;
+    color: #00AAFF;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+}
+
+/* EFECTO SCANLINE */
+.scan::after {
+    content: " ";
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.texto-azul { color: #00AAFF; }
+.texto-rojo { color: #FF0000; }
+.border-azul { border: 2px solid #00AAFF; }
+.border-rojo { border: 2px solid #FF0000; }
+.underline { text-decoration: underline; }
+
+header, 
+.contenedor_logo {
+    border: none;
+}
+
+.contenedor_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    border-top: 2px solid #FF0000;
+}
+
+nav a {
+    flex: 1;
+    padding: 15px;
+    color: #00AAFF;
+    text-decoration: none;
     text-align: center;
+    border: 1px solid #FF0000;
+}
+
+nav a:hover {
+    background: #00AAFF;
+    color: #000;
+}
+
+.card-trabajo {
+    border: 1px solid #00AAFF;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 255, 0.05);
+}
+
+.btn-rojo {
+    background: transparent;
+    color: #FF0000;
+    border: 2px solid #FF0000;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-rojo:hover {
+    background: #FF0000;
+    color: #000;
+    box-shadow: 0 0 15px #FF0000;
+}
+
+.aviso-bloqueo {
+    text-align: center;
+    padding: 50px;
+    background: rgba(255, 0, 0, 0.05);
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #00AAFF;
+    padding-top: 10px;
+}
+
+/* ============================================================
+   ESTILOS ESPECÍFICOS PARA EL LOGIN - TERMINAL ETS2
+   ============================================================ */
+
+/* Contenedor principal que centra el login en pantalla */
+.contenedor_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #000;
+}
+
+/* Caja de login con efecto de "Pantalla de Seguridad" */
+.contenedor_login {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #000;
+    border: 2px solid #00AAFF; /* Borde Azul */
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.4), inset 0 0 15px rgba(0, 0, 255, 0.2);
+    position: relative;
+    border-radius: 0; /* Estilo industrial, nada de bordes redondeados */
+}
+
+/* Título de acceso en Rojo para indicar jerarquía */
+.login-titulo {
+    color: #FF0000;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    border-bottom: 1px solid #FF0000;
+    padding-bottom: 10px;
+}
+
+/* Etiquetas de los campos */
+label {
+    color: #00AAFF;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* Estilo de los Inputs (Cajas de texto) */
+input[type="text"], 
+input[type="password"] {
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #00AAFF;
+    color: #00AAFF;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Cambio a Rojo cuando el usuario está escribiendo */
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    border-color: #FF0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    color: #FF0000;
+}
+
+/* Botón de envío - Estilo de "Ejecución" */
+.texto-boton {
+    width: 100%;
+    background-color: transparent;
+    color: #FF0000;
+    border: 2px solid #FF0000;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.texto-boton:hover {
+    background-color: #FF0000;
+    color: #000;
+    box-shadow: 0 0 25px #FF0000;
+}
+
+/* Mensajes de error dinámicos (JavaScript) */
+.mensaje-error-js {
+    color: #FF0000;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #FF0000;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    animation: parpadeo 1s infinite;
+}
+
+/* Animación de alerta para errores */
+@keyframes parpadeo {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.footer-hispania { 
+    border-top: 3px solid #FF0000; 
+    padding: 30px; margin-top: 50px; 
+}
+
+.footer-contenedor { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.img-footer { 
+    width: 200px;  
+    height: auto;
+}
+
+.footer-centro { 
+    text-align: center; 
+}
+
+.autor { 
+    font-weight: bold; 
+    text-shadow: 0 0 5px #FF0000; 
+}
+
+.footer-derecha { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; 
+}
+
+.icono-social { 
+    color: #0000FF; 
+    text-decoration: none; 
+    font-size: 0.8rem; 
+}
+
+.icono-social:hover { 
+    color: #FF0000; 
+}
+
+CSS
+/* ============================================================
+   ESTILOS ESPECÍFICOS: CONTACTO.PHP - HISPANIA TRAVEL
+   ============================================================ */
+
+/* Contenedor en Grid para separar Formulario de Info */
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
     margin-top: 30px;
 }
 
-/*Estilo para el contenedor de todas las películas*/
-.contenedor_peliculas {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-radius: 12px;
-
+/* Caja del Formulario */
+.formulario-container {
+    background: rgba(0, 0, 255, 0.05); /* Fondo azul muy sutil */
+    padding: 30px;
+    border: 1px solid #00AAFF;
+    box-shadow: inset 0 0 15px rgba(0, 0, 255, 0.2);
 }
 
-/*Estilo para la parte de la imagen, del título, descripción, género y duración*/
-.detalle_pelicula{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+/* Estilo de Etiquetas (Labels) */
+.formulario-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
-/*Estilo general para las imágenes*/
-.imagenes_pelicula{
-    width: 20rem;
-    min-width: 5rem;
-}
-
-/*Estilo para las imágenes de la película*/
-.imagenes_pelicula img{
+/* Inputs, Select y Textarea */
+.formulario-container input, 
+.formulario-container textarea, 
+.select-ht {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+    background-color: #000;
+    border: 1px solid #00AAFF;
+    color: #00AAFF;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 20px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-/*Estilo para el contenedor donde está el título, la descripción y género y duración*/
-.contenedor_pelicula{
-    background-color: #e7ba8f ;
-    padding: 1rem;
-    border-radius: 12px;
-    width: 58%;
-    min-width: 70%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+/* Efecto Focus: Pasa de Azul a Rojo al escribir */
+.formulario-container input:focus, 
+.formulario-container textarea:focus, 
+.select-ht:focus {
+    border-color: #FF0000;
+    color: #FF0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+/* Estilo especial para el desplegable (Select) */
+.select-ht {
+    cursor: pointer;
+    appearance: none; /* Quita el estilo por defecto del navegador */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%230000FF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+/* Área de información de sedes (Derecha) */
+.info-sedes {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+    gap: 20px;
 }
 
-/*Estilo para el título de la película*/
-.contenedor_pelicula h3{
-    font-size: 32px;
+.info-sedes .card-trabajo {
+    margin-bottom: 0; /* Ajuste para el grid */
+    border-left: 4px solid #FF0000; /* Detalle en rojo para las sedes */
 }
 
-/*Estilo para la descripción*/
-.texto_descripcion{
-    font-size: 17px;
-    line-height: 1.5;
+/* Placeholder en azul oscuro */
+::placeholder {
+    color: #00AAFF;
 }
 
-/*Estilo para la duración y el género*/
-.duracion_genero{
-    margin-top: 5px;
-}
-
-/*Ahora estilo general para las sesiones*/
-.sesiones_peliculas{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-/*Estilo para que el enlace de sesiones no se vea*/
-.sesiones_peliculas a{
-    text-decoration: none;
-    color: black;
-}
-
-/*Estilo para cada una de las salas*/
-.salas{
-    background-color: #f8e0bc;
-    padding: 18px;
-    border-radius: 12px;
-    width: 80%;
-    min-width: 350px;
-    margin: 1rem;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
-}
-
-/*======================Estilos para index.php=======================*/
-
-
-
-
-/*Estilo para el saludo al usuario*/
-.saludo_usuario {
-    font-size: 1rem;
-    font-family: "Verdana", "Geneva", sans-serif;
-    color: #000000;
-    display: flex;
-    justify-content: flex-end;
-    margin: 1rem;
-}
-
-/*Estilo para el texto de cerrar sesión*/
-.cerrar_sesion{
-    color: #000000;
-    margin-left: 1rem;
-}
-
-/*======================Estilos para carrito.php=====================*/
-
-
-/*Estilo para la página del carrito vacío*/
-.carrito-vacio{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 30rem;
-}
-
-/*Estilo para el contenedor del resumen de la compra*/
-.detalle-carrito{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-    border-radius: 12px;
-    background-color: #e7ba8f;
-    margin: 3%;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
-    flex-wrap: wrap;
-}
-
-/*Estilo para la imagen del carrito*/
-.detalle-carrito img{
-    margin-right: 2rem;
-    border-radius: 12px;
-    width: 17%;
-}
-
-/*Estilo para la información del ticket*/
-.info-ticket{
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    border-radius: 12px;
-    justify-content: space-evenly; 
-}
-
-/*Estilo general para los botones del carrito*/
-.detalle-carrito form{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-/*Estilo para el espacio de los botones*/
-.detalle-carrito button{
-    margin-left: 1rem;
- }
-
-/*Estilo para que a la hora de imprimir el ticket no aparezca el header ni footer*/
-@media print {
-    body {
-        background: white;
+/* Responsivo para móviles */
+@media (max-width: 850px) {
+    .grid-contacto {
+        grid-template-columns: 1fr;
     }
-
-    header, nav, footer {
-        display: none;
+    
+    .info-sedes {
+        order: -1; /* La info sale arriba en móviles */
     }
-
-    .detalle-carrito {
-        width: 100%;
-        margin: 0;
-        background: white;
-        box-shadow: none;
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .detalle-carrito form, button {
-        display: none;
-    }
-}
-
-/*Estilo para que se vea bien en pantallas pequeñas*/
-@media screen and (max-width: 768px) {
-
-    .logotipo{
-        width: 100px;
-        min-width: 100px;
-    }
-    .usuario{
-        width: 50px;
-        min-width: 50px;
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .detalle-carrito img{
-        width: 250px;
-        min-width: 250px;
-    }
-
-    .creative_commons {
-        width: 100px;
-        min-width: 100px;
-    }
-    .texto_contenedor_footer {
-        font-size: 1rem;
-    }
-
 }
