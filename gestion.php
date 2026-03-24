@@ -1,9 +1,8 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hispania Travel - Manuales</title>
+    <title>HT - Panel de Gestión</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="general.js"></script>
@@ -12,12 +11,12 @@
     <header>
         <div class="contenedor_logo">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <img class="logo-hispania" src="Imagenes _Cabecera/logo.png" alt="Logo">
-                <h1 class="texto-azul">HISPANIA <span class="texto-rojo">TRAVEL</span></h1>
+                <img class="logo-hispania" src="Imagenes _Cabecera/logo.png" alt="Logo" style="width:50px;">
+                <h1 class="texto-azul">SISTEMA <span class="texto-rojo">DE GESTIÓN</span></h1>
             </div>
-            <div id="saludo-trucker" class="texto-azul">CONEXIÓN: INVITADO</div>
+            <div id="saludo-trucker" class="texto-azul">MODO: ADMINISTRADOR</div>
             <div style="display: flex; gap: 15px; align-items: center;">
-                <a href="login.php" id="btn-sesion" class="btn-rojo">ACCESO STAFF</a>
+                <a href="#" id="btn-sesion" class="btn-rojo">SALIR</a>
             </div>
         </div>
         <nav id="menu-navegacion">
@@ -28,14 +27,13 @@
     </header>
 
     <main class="contenedor-principal">
-        <h2 class="texto-rojo underline">CENTRO DE CAPACITACIÓN</h2>
-        <section class="seccion-manuales">
-            <div class="card-trabajo">
-                <h3 class="texto-azul">01. RECURSOS OFICIALES</h3>
-                <div class="contenido-tutorial"><p class="texto-rojo">[ ACCESO RESTRINGIDO ]</p></div>
-            </div>
-        </section>
+        <div class="card-trabajo" style="border-left: 4px solid #FF0000;">
+            <h2 class="texto-rojo underline"><i class="fas fa-users-cog"></i> BASE DE DATOS</h2>
+            <div id="lista-usuarios" class="tabla-gestion-container">
+                </div>
+        </div>
     </main>
+
     <footer class="footer-hispania">
         <div class="footer-contenedor">
             <img src="Imagenes_Footer/logo2.png" class="img-footer">
