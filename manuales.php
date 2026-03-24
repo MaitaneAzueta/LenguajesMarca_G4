@@ -10,8 +10,7 @@
     <script src="general.js"></script>
 </head>
 <body class="scan">
-    
-    <header class="border-azul">
+    <header>
         <div class="contenedor_logo">
             <img class="logo-hispania" src="Imagenes _Cabecera/logo.png" alt="Logo Hispania Travel">
             <h1 class="texto-azul">HISPANIA <span class="texto-rojo">TRAVEL S.A</span></h1>

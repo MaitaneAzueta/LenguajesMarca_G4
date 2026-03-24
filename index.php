@@ -43,25 +43,22 @@
 
         </main>
 
-        <footer class="footer-hispania">
-            <div class="footer-contenedor">
-                <div class="footer-izquierda">
-                    <img src="Imagenes_Footer/logo2.png" alt="HT Logo Footer" class="img-footer">
-                </div>
-                
-                <div class="footer-centro">
-                    <p>© 2026 HISPANIA TRAVEL S.A. - TODOS LOS DERECHOS RESERVADOS</p>
-                    <p class="texto-rojo">CREADORA: <span class="autor">ARIMA</span></p>
-                </div>
-                
-                <div class="footer-derecha">
-                    <a href="https://discord.gg/sTGRwdSWZJ" class="icono-social"><img src="Imagenes_Footer/discord.png" alt="Discord"></a>
-                    <a href="#" class="icono-social"><img src="Imagenes_Footer/instagram.png" alt="Instagram"></a>
-                    <a href="https://www.tiktok.com/@hispania_travel?_r=1&_t=ZN-94uf0aFnHl8" class="icono-social"><img src="Imagenes_Footer/tiktok.png" alt="TikTok"></a>
-                    <a href="https://m.twitch.tv/hispaniatravel_sa/home" class="icono-social"><img src="Imagenes_Footer/twitch.png" alt="Twitch"></a>
-                </div>
+    <footer class="footer-hispania">
+        <div class="footer-contenedor">
+            <div class="footer-izquierda">
+                <img src="Imagenes_Footer/logo2.png" alt="HT Logo Footer" class="img-footer">
             </div>
-        </footer>
+            <div class="footer-centro">
+                <p>© 2026 HISPANIA TRAVEL S.A. - TODOS LOS DERECHOS RESERVADOS</p>
+                <p class="texto-rojo">CREADORA: <span class="autor">ARIMA</span></p>
+            </div>
+            <div class="footer-derecha">
+                <a href="#" class="icono-social"><i class="fab fa-discord"></i> DISCORD</a>
+                <a href="#" class="icono-social"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+                <a href="#" class="icono-social"><i class="fab fa-tiktok"></i> TIKTOK</a>
+            </div>
+        </div>
+    </footer>
 
     </body>
 </html>

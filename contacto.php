@@ -10,12 +10,11 @@
     <script src="general.js"></script>
 </head>
 <body class="scan">
-    
-    <header class="border-azul">
+    <header>
         <div class="contenedor_logo">
             <img class="logo-hispania" src="Imagenes _Cabecera/logo.png" alt="Logo Hispania Travel">
             <h1 class="texto-azul">HISPANIA <span class="texto-rojo">TRAVEL S.A</span></h1>
-            <div id="saludo-trucker" class="texto-azul">ESTADO: CONSULTA PÚBLICA</div>
+            <div id="saludo-trucker" class="texto-azul">CONEXIÓN: INVITADO</div>
             <a href="login.php" id="btn-sesion" class="btn-rojo">ACCESO STAFF</a>
         </div>
         
@@ -85,3 +84,4 @@
 
 </body>
 </html>
+

@@ -103,3 +103,4 @@ function cerrarSesion() {
         window.location.href = "index.php";
     }
 }
+
