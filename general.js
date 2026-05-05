@@ -21,8 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
 function verificarSeguridadRutas() {
     const path = window.location.pathname;
     const role = localStorage.getItem("ht_role");
-    if (path.includes("gestion.php") && role !== "Gestor") window.location.href = "index.php";
-    if (path.includes("manuales.php") && (role !== "Conductor" && role !== "Gestor")) window.location.href = "index.php";
+
+    // 1. Solo Gestores entran a gestion.php
+    if (path.includes("gestion.php") && role !== "Gestor") {
+        window.location.href = "index.php";
+    }
+
+    // 2. Conductores y Gestores ven manuales.php (Visitantes NO)
+    if (path.includes("manuales.php")) {
+        if (role !== "Conductor" && role !== "Gestor") {
+            alert("ACCESO RESTRINGIDO: SE REQUIERE RANGO CONDUCTOR.");
+            window.location.href = "index.php";
+        }
+    }
 }
 
 async function registrarUsuario() {
@@ -96,29 +107,59 @@ async function cargarTablaGestion() {
     if (!lista) return;
 
     try {
-        // En PHP usamos el método GET simple para traer la lista
         const response = await fetch(API_URL); 
         const usuarios = await response.json();
         
-        if (usuarios.length === 0) {
-            lista.innerHTML = "<p class='texto-rojo'>SISTEMA VACÍO.</p>";
-            return;
-        }
-
-        let html = `<table style="width:100%; border-collapse: collapse; color: white; border: 1px solid #333;">
-                    <thead><tr style="border-bottom: 2px solid #FF0000;">
-                    <th>ID USUARIO</th><th>RANGO</th><th>ACCIONES</th></tr></thead><tbody>`;
+        let html = `<table class="tabla-custom">
+                    <thead><tr>
+                    <th>ID USUARIO</th><th>RANGO ACTUAL</th><th>CAMBIAR RANGO</th><th>ACCIONES</th>
+                    </tr></thead><tbody>`;
 
         usuarios.forEach((u) => {
             html += `<tr>
                 <td style="color: #00AAFF;">${u.nombre.toUpperCase()}</td>
-                <td>${u.rango.toUpperCase()}</td>
-                <td><button onclick="borrarUsuarioRemote('${u.nombre}')" style="color:red; background:none; border:none; cursor:pointer;"><i class="fas fa-trash-alt"></i></button></td>
+                <td><span class="badge-${u.rango.toLowerCase()}">${u.rango}</span></td>
+                <td>
+                    <select onchange="cambiarRangoRemote('${u.nombre}', this.value)">
+                        <option value="Visitante" ${u.rango === 'Visitante' ? 'selected' : ''}>Visitante</option>
+                        <option value="Conductor" ${u.rango === 'Conductor' ? 'selected' : ''}>Conductor</option>
+                        <option value="Gestor" ${u.rango === 'Gestor' ? 'selected' : ''}>Gestor</option>
+                    </select>
+                </td>
+                <td>
+                    <button onclick="borrarUsuarioRemote('${u.nombre}')" class="btn-borrar"><i class="fas fa-trash"></i></button>
+                </td>
             </tr>`;
         });
         lista.innerHTML = html + "</tbody></table>";
     } catch (e) {
-        lista.innerHTML = "Error al cargar datos de la nube.";
+        lista.innerHTML = "Error al conectar con la base de datos.";
+    }
+}
+
+// Nueva función para enviar el cambio a la base de datos
+async function cambiarRangoRemote(nombre, nuevoRango) {
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                accion: "actualizar_rango", 
+                nombre: nombre, 
+                rango: nuevoRango 
+            })
+        });
+        const data = await response.json();
+        if(data.success) {
+            alert("RANGO DE " + nombre.toUpperCase() + " ACTUALIZADO A " + nuevoRango);
+            // Si el usuario se cambió a sí mismo, actualizamos su sesión local
+            if(localStorage.getItem("ht_user") === nombre) {
+                localStorage.setItem("ht_role", nuevoRango);
+            }
+            location.reload(); // Recargamos para aplicar cambios de menú
+        }
+    } catch (e) {
+        alert("Error en la conexión.");
     }
 }
 
