@@ -8,9 +8,9 @@ if (!isset($_SESSION['rango']) || $_SESSION['rango'] == 'Visitante') {
 }
 
 $mi_rango = $_SESSION['rango'];
-$conexion = new mysqli("tu_host", "tu_user", "tu_pass", "test", 4000);
+$conexion = new mysqli("gateway01.eu-central-1.prod.aws.tidbcloud.com", "2tvbKFgEYyWm58d.root", "TlDYiAeavwP9WiOO", "test", 4000);
 ?>
-
+    
 <!DOCTYPE html>
 <html lang="es">
 <head>
