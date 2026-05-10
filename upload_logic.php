@@ -11,7 +11,7 @@ if ($rango_recibido !== 'Gestor') {
 
 // 2. CONFIGURACIÓN CLOUDINARY
 $cloud_name = "darlbycqo"; 
-$upload_preset = "TU_PRESET_UNSIGNED"; // El que creaste en Cloudinary
+$upload_preset = "eventos_preset"; // El que creaste en Cloudinary
 
 // 3. CONFIGURACIÓN TiDB
 $host = 'gateway01.eu-central-1.prod.aws.tidbcloud.com';
