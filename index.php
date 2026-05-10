@@ -25,6 +25,7 @@
             <a href="index.php">MENÚ PRINCIPAL</a>
             <a href="manuales.php" id="nav-manuales">MANUALES HT</a>
             <a href="contacto.php">CONTACTO</a>
+            <a href="eventos.php">EVENTOS</a>
         </nav>
     </header>
 
