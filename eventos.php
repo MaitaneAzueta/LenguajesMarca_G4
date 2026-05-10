@@ -1,8 +1,8 @@
 <?php
 // Conexión a TiDB Cloud
-$host = 'tu_host_tidb';
-$user = 'tu_usuario';
-$pass = 'tu_password';
+$host = 'gateway01.eu-central-1.prod.aws.tidbcloud.com';
+$user = '2tvbKFgEYyWm58d.root';
+$pass = 'TlDYiAeavwP9WiOO';
 $db   = 'test';
 $port = 4000;
 

@@ -14,9 +14,9 @@ $cloud_name = "darlbycqo";
 $upload_preset = "TU_PRESET_UNSIGNED"; // El que creaste en Cloudinary
 
 // 3. CONFIGURACIÓN TiDB
-$host = 'tu_host_tidb';
-$user = 'tu_usuario';
-$pass = 'tu_password';
+$host = 'gateway01.eu-central-1.prod.aws.tidbcloud.com';
+$user = '2tvbKFgEYyWm58d.root';
+$pass = 'TlDYiAeavwP9WiOO';
 $db   = 'test';
 $port = 4000;
 
