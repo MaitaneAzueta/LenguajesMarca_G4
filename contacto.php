@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hispania Travel - Atención al Cliente</title>
+    <title>Hispania Travel - Contacto</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="general.js"></script>
@@ -13,7 +13,7 @@
         <div class="contenedor_logo">
             <div style="display: flex; align-items: center; gap: 15px;">
                 <img class="logo-hispania" src="Imagenes _Cabecera/logo.png" alt="Logo">
-                <h1 class="texto-azul">HISPANIA <span class="texto-rojo">TRAVEL S.A</span></h1>
+                <h1 class="texto-azul">HISPANIA <span class="texto-rojo">TRAVEL</span></h1>
             </div>
             <div id="saludo-trucker" class="texto-azul">CONEXIÓN: INVITADO</div>
             <div style="display: flex; gap: 15px; align-items: center;">
@@ -25,6 +25,7 @@
             <a href="index.php">MENÚ PRINCIPAL</a>
             <a href="manuales.php" id="nav-manuales">MANUALES HT</a>
             <a href="contacto.php">CONTACTO</a>
+            <a href="eventos.php">EVENTOS</a>
         </nav>
     </header>
 
@@ -64,13 +65,13 @@
         <div class="footer-contenedor">
             <img src="Imagenes_Footer/logo2.png" class="img-footer">
             <div class="footer-centro">
-                <p>© 2026 HISPANIA TRAVEL S.A. - TODOS LOS DERECHOS RESERVADOS</p>
+                <p>© 2026 HISPANIA TRAVEL - TODOS LOS DERECHOS RESERVADOS</p>
                 <p class="texto-rojo">CREADORA: <span class="autor">ARIMA</span></p>
             </div>
             <div class="footer-derecha">
-                <a href="#" class="icono-social"><i class="fab fa-discord"></i> DISCORD</a>
-                <a href="#" class="icono-social"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-                <a href="#" class="icono-social"><i class="fab fa-tiktok"></i> TIKTOK</a>
+                <a href="https://discord.gg/aUQt3pjYCh" class="icono-social"><i class="fab fa-discord"></i> DISCORD</a>
+                <a href="https://www.instagram.com/hispaniatravel1?igsh=MWdtNTgxanQyNzdtZw==" class="icono-social"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+                <a href="https://www.tiktok.com/@hispania_travel?_r=1&_t=ZN-96FyXgU4p2E" class="icono-social"><i class="fab fa-tiktok"></i> TIKTOK</a>
             </div>
         </div>
     </footer>

@@ -13,7 +13,7 @@
         <div class="contenedor_logo">
             <div style="display: flex; align-items: center; gap: 15px;">
                 <img class="logo-hispania" src="Imagenes _Cabecera/logo.png" alt="Logo">
-                <h1 class="texto-azul">HISPANIA <span class="texto-rojo">TRAVEL S.A</span></h1>
+                <h1 class="texto-azul">HISPANIA <span class="texto-rojo">TRAVEL</span></h1>
             </div>
             <div id="saludo-trucker" class="texto-azul">CONEXIÓN: INVITADO</div>
             <div style="display: flex; gap: 15px; align-items: center;">
@@ -32,7 +32,14 @@
     <main class="contenedor-principal">
         <div class="card-trabajo">
             <h2 class="texto-rojo">BIENVENIDO A LA TERMINAL</h2>
-            <p>Esperando carga de contenido corporativo...</p>
+            <p>Bienvenidos a Hispania Travel VTC
+Empresa virtual de transporte en Euro Truck Simulator 2 a través de TruckersMP.
+En Hispania Travel VTC no solo transportamos mercancías… vivimos la carretera. Somos una comunidad apasionada por el mundo del transporte, donde cada kilómetro cuenta y cada ruta se convierte en una experiencia única.
+Recorremos juntos ciudades, países y paisajes de todo el mundo, enfrentándonos a nuevos desafíos y descubriendo carreteras ocultas que solo los verdaderos amantes del camión conocen. Aquí encontrarás compañerismo, buen ambiente y ese toque de diversión que convierte cada convoy en algo inolvidable.
+Si estás buscando una empresa donde disfrutar, aprender, compartir rutas y formar parte de una auténtica familia del asfalto… has llegado al lugar indicado.
+Únete a nosotros y empieza tu viaje.
+Hispania Travel VTC — Más que una empresa, una forma de vivir la carretera.
+🔥 Gas, gas, gas… y buena ruta. 🚛💨</p>
         </div>
     </main>
 
@@ -40,13 +47,13 @@
         <div class="footer-contenedor">
             <img src="Imagenes_Footer/logo2.png" class="img-footer">
             <div class="footer-centro">
-                <p>© 2026 HISPANIA TRAVEL S.A. - TODOS LOS DERECHOS RESERVADOS</p>
+                <p>© 2026 HISPANIA TRAVEL - TODOS LOS DERECHOS RESERVADOS</p>
                 <p class="texto-rojo">CREADORA: <span class="autor">ARIMA</span></p>
             </div>
             <div class="footer-derecha">
-                <a href="#" class="icono-social"><i class="fab fa-discord"></i> DISCORD</a>
-                <a href="#" class="icono-social"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-                <a href="#" class="icono-social"><i class="fab fa-tiktok"></i> TIKTOK</a>
+                <a href="https://discord.gg/aUQt3pjYCh" class="icono-social"><i class="fab fa-discord"></i> DISCORD</a>
+                <a href="https://www.instagram.com/hispaniatravel1?igsh=MWdtNTgxanQyNzdtZw==" class="icono-social"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+                <a href="https://www.tiktok.com/@hispania_travel?_r=1&_t=ZN-96FyXgU4p2E" class="icono-social"><i class="fab fa-tiktok"></i> TIKTOK</a>
             </div>
         </div>
     </footer>
