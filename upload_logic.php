@@ -1,74 +1,59 @@
 <?php
-session_start();
+header('Content-Type: application/json');
 
-// 1. SEGURIDAD: Solo el rango 'Gestor' puede ejecutar este código
-// Ajusta 'Gestor' al nombre exacto que uses en tu tabla 'usuarios'
-if (!isset($_SESSION['rango']) || $_SESSION['rango'] !== 'Gestor') {
-    header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'error' => 'Acceso denegado: No tienes rango de Gestor']);
+// 1. Recibimos el rol enviado desde el JavaScript
+$rango_recibido = $_POST['role'] ?? '';
+
+if ($rango_recibido !== 'Gestor') {
+    echo json_encode(['success' => false, 'error' => 'Permiso denegado: Se requiere rango Gestor']);
     exit();
 }
 
-// 2. CONFIGURACIÓN DE CLOUDINARY
-// Consigue estos datos en tu Dashboard de Cloudinary
+// 2. CONFIGURACIÓN CLOUDINARY
 $cloud_name = "darlbycqo"; 
-$upload_preset = "eventos_preset"; // Debes crearlo en Settings -> Upload -> Unsigned uploading
+$upload_preset = "TU_PRESET_UNSIGNED"; // El que creaste en Cloudinary
 
-// 3. CONFIGURACIÓN DE TiDB (MySQL)
-$host = 'gateway01.eu-central-1.prod.aws.tidbcloud.com';
-$user = '2tvbKFgEYyWm58d.root';
-$pass = 'TlDYiAeavwP9WiOO';
+// 3. CONFIGURACIÓN TiDB
+$host = 'tu_host_tidb';
+$user = 'tu_usuario';
+$pass = 'tu_password';
 $db   = 'test';
 $port = 4000;
 
-// Conexión con SSL (Obligatorio para TiDB Cloud en Render)
 $conn = mysqli_init();
 $conn->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
-if (!$conn->real_connect($host, $user, $pass, $db, $port)) {
-    die(json_encode(['success' => false, 'error' => 'Error de conexión a DB']));
-}
+$conn->real_connect($host, $user, $pass, $db, $port);
 
-// 4. PROCESO DE SUBIDA
+// 4. PROCESO
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $texto = $_POST['texto'] ?? '';
+    $texto = $_POST['texto'];
     $archivo = $_FILES['foto']['tmp_name'];
 
-    if (empty($archivo)) {
-        echo json_encode(['success' => false, 'error' => 'No se seleccionó ninguna imagen']);
-        exit();
-    }
-
-    // A. Subir la imagen a Cloudinary mediante CURL
-    $url_cloudinary = "https://api.cloudinary.com/v1_1/$cloud_name/image/upload";
-    
+    // Subida a Cloudinary
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url_cloudinary);
+    curl_setopt($ch, CURLOPT_URL, "https://api.cloudinary.com/v1_1/$cloud_name/image/upload");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, [
         'file' => new CURLFile($archivo),
         'upload_preset' => $upload_preset
     ]);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    
-    $result_json = curl_exec($ch);
-    $response = json_decode($result_json, true);
+    $response = json_decode(curl_exec($ch), true);
     curl_close($ch);
 
-    // B. Si la subida fue exitosa, guardar en TiDB
     if (isset($response['secure_url'])) {
-        $imagen_url = $response['secure_url'];
-
-        $sql = "INSERT INTO publicaciones (texto, imagen_url) VALUES (?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $texto, $imagen_url);
-
+        $url = $response['secure_url'];
+        
+        $stmt = $conn->prepare("INSERT INTO publicaciones (texto, imagen_url) VALUES (?, ?)");
+        $stmt->bind_param("ss", $texto, $url);
+        
         if ($stmt->execute()) {
             echo json_encode(['success' => true]);
         } else {
-            echo json_encode(['success' => false, 'error' => 'Error al guardar en base de datos']);
+            echo json_encode(['success' => false, 'error' => 'Error al escribir en TiDB']);
         }
     } else {
-        echo json_encode(['success' => false, 'error' => 'Error al subir a la nube']);
+        echo json_encode(['success' => false, 'error' => 'Error al subir imagen a la nube']);
     }
 }
 ?>
